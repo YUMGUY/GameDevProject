@@ -5,12 +5,17 @@ using TMPro;
 
 public class WaveCounter : MonoBehaviour
 {
-    public TextMeshPro currentWaveText;
+    public TextMeshProUGUI currentWaveText;
     int currentWave;
 
     public void setWave(int waveToSet)
     {
         currentWave = waveToSet;
         currentWaveText.text = "Wave: " + currentWave.ToString();
+    }
+    
+    public int getWave()
+    {
+        return currentWave;
     }
 }

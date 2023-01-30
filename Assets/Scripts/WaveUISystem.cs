@@ -11,6 +11,7 @@ public class WaveUISystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer.GetComponent<Stopwatch>().startStopwatch();
         waveCounter.GetComponent<WaveCounter>().setWave(5);
     }
 }
