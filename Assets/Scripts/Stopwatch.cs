@@ -6,14 +6,8 @@ using System;
 
 public class Stopwatch : MonoBehaviour
 {
-    float currentTime;
-    [SerializeField] int startMinutes;
     public TextMeshProUGUI currentTimeText;
-    
-    void Start()
-    {
-        currentTime = 0;
-    }
+    float currentTime = 0;
 
     void Update()
     {
@@ -23,5 +17,9 @@ public class Stopwatch : MonoBehaviour
         currentTimeText.text = time.ToString(@"mm\:ss");
     }
 
-
+    // Returns the current time of the timer
+    public float getCurrentTime()
+    {
+        return currentTime;
+    }
 }
