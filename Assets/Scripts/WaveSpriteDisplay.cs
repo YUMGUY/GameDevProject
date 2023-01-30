@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class WaveSpriteDisplay : MonoBehaviour
 {
-    public void displayWaveSprite()
+    List<Sprite> spritesShowing;
+    public void addWaveSprite(Sprite spriteToAdd)
     {
+        spritesShowing.Add(spriteToAdd);
 
     }
+    //public void removeWaveSprite()
 }
