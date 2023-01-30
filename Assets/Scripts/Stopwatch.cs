@@ -29,4 +29,11 @@ public class Stopwatch : MonoBehaviour
     {
         return currentTime;
     }
+    
+    // Returns a filtered time containing only whole seconds
+    public int getCurrentSecond()
+    {
+        TimeSpan time = TimeSpan.FromSeconds(currentTime);
+        return (int)time.TotalSeconds;
+    }
 }
