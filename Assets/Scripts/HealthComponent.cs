@@ -8,13 +8,6 @@ public class HealthComponent : MonoBehaviour
   public FloatEvent OnDamageTaken;
   public FloatEvent OnHeal;
   public UnityEvent OnDeath;
-
-  // test values REMOVE BEFORE MERGING
-  [SerializeField]
-  float testHealAmount = 5f;
-  [SerializeField]
-  float testDamageAmount = -5f;
-  // test code end
   
   /// <summary>
   /// Initializes max health to current health.
@@ -26,16 +19,7 @@ public class HealthComponent : MonoBehaviour
 
   void Update()
   {
-    // Test code REMOVE BEFORE MERGING
-    if (Input.GetKeyDown(KeyCode.Q)) 
-    {
-      ChangeHealth(testHealAmount);
-    }
-    if (Input.GetKeyDown(KeyCode.E)) 
-    {
-      ChangeHealth(testDamageAmount);
-    }
-    // Test code end
+
   }
 
   /// <summary>
@@ -69,19 +53,4 @@ public class HealthComponent : MonoBehaviour
       OnDamageTaken.Invoke(-amount);
     }
   }
-
-  // Test code REMOVE BEFORE MERGE
-  public void HealResponse(float value)
-  {
-    Debug.Log("Heal " + value);
-  }
-  public void DeathResponse()
-  {
-    Debug.Log("Death comes");
-  }
-  public void DamageResponse(float value)
-  {
-    Debug.Log("Damage " + value);
-  }
-  // Test code end
 }
