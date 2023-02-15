@@ -148,8 +148,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawning: 0
-  objectSpawned: {fileID: 4409278613925447102, guid: 7ff8d5d76e155614e84da468ec7671ba, type: 3}
+  parentBase: {fileID: 0}
+  objectSpawned: {fileID: 0}
   defense: {fileID: 0}
+  defenseSprite: {fileID: 0}
   numberOfClicks: 0
 --- !u!1 &1267725760685418552
 GameObject:
