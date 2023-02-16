@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseEnemyMove : MonoBehaviour
+// This will become an abstract class for both enemies and turrets to reference
+public class LocomotionSystem_Base : MonoBehaviour
 {
 
     [SerializeField] float baseEnemySpeed;

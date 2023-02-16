@@ -5,10 +5,10 @@ using UnityEngine;
 /* Controls and monitors all components related to the enemy this script
  * is embedded in
  */
-public class BaseEnemyAI : MonoBehaviour
+public class AI_Base : MonoBehaviour
 {
-    [SerializeField] BaseEnemyMove locomotionSystem;
-    [SerializeField] AttackSystem attackSystem;
+    [SerializeField] LocomotionSystem_Base locomotionSystem;
+    [SerializeField] AttackSystem_Base attackSystem;
     [SerializeField] string[] targetTags;
     private void OnEnable()
     {
@@ -79,6 +79,7 @@ public class BaseEnemyAI : MonoBehaviour
         return targetList;
     }
 
+    // Depreciated, will be removing eventually
     private void checkComponentsAreValid()
     {
         Debug.Assert(locomotionSystem != null, "Enemy: " + this.name.ToString() + " does not have it's locomotion script assigned");
