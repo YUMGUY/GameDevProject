@@ -66,7 +66,7 @@ public class Movement : MonoBehaviour
         dottedLine = lineDest.AddComponent<DottedLine>();
         dottedLine.source = gameObject;
         dottedLine.destination = lineDest;
-        dottedLine.lineMaterial = Resources.Load("DottedLine", typeof(Material)) as Material;
+        dottedLine.lineMaterial = Resources.Load("BaseAssets/DottedLine", typeof(Material)) as Material;
         dottedLine.lineColor = Color.yellow;
     }
 
