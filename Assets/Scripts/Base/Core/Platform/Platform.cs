@@ -141,7 +141,7 @@ public class Platform : MonoBehaviour
     {
         Vector2 corePos = gameObject.transform.position;
         float cursorRadius = Vector2.Distance(cursorPos, corePos);
-        Debug.Log(cursorRadius + " " + coreRadius + " " + ringIncrement);
+        
         int ringNum = (int)((cursorRadius - coreRadius) / ringIncrement);
         float innerRadius = Mathf.Max(coreRadius + ringIncrement * ringNum, coreRadius);
         float outerRadius = innerRadius + towerRadius;
