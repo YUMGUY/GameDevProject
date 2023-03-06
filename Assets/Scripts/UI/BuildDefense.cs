@@ -18,7 +18,7 @@ public class BuildDefense : MonoBehaviour
     {
         if(Input.GetMouseButton(0) && spawning == true)
         {
-            Tuple<Vector3, bool> placement = towerBase.place();
+            Tuple<Vector3, bool> placement = towerBase.place(defense);
             if (placement.Item2) //Placed successfully
             {
                 numberOfClicks = 1;
