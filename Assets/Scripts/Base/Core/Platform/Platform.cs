@@ -218,9 +218,11 @@ public class Platform : MonoBehaviour
         placedTowers.Add((cursorInfo.ringNum, cursorInfo.closestSection), obj);
     }
 
-    public void delete(GameObject obj)
+    public GameObject delete()
     {
+        GameObject obj = placedTowers[(cursorInfo.ringNum, cursorInfo.closestSection)];
         placedTowers.Remove((cursorInfo.ringNum, cursorInfo.closestSection));
+        return obj;
     }
 
     public bool pointInBase(Vector2 point)
