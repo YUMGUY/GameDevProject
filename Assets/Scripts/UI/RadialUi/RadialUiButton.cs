@@ -7,6 +7,7 @@ public class RadialUiButton : MonoBehaviour
 
     [SerializeField] ButtonType buttonType;
     [SerializeField] Platform platform;
+    [SerializeField] RadialUi radialUi;
 
     void Start()
     {
@@ -15,6 +16,14 @@ public class RadialUiButton : MonoBehaviour
 
     public void clicked()
     {
+        if(buttonType == ButtonType.Create)
+        {
+            gameObject.GetComponent<BuildDefense>().BuyDefense();
+        }
+        else if(buttonType == ButtonType.Upgrade)
+        {
+
+        }
         if (buttonType == ButtonType.Move)
         {
             if(platform.towerExists())
@@ -31,5 +40,7 @@ public class RadialUiButton : MonoBehaviour
                 Destroy(tower);
             }
         }
+        
+        radialUi.disableInteraction(); //After click is finished processing, make the UI non-interactable
     }
 }

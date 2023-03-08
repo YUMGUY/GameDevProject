@@ -20,6 +20,9 @@ public class RadialUi : MonoBehaviour
         upgradeButton.GetComponent<CanvasGroup>().alpha = 0.0f;
         moveButton.GetComponent<CanvasGroup>().alpha = 0.0f;
         deleteButton.GetComponent<CanvasGroup>().alpha = 0.0f;
+
+        disableInteraction();
+
         open = false;
     }
 
@@ -27,13 +30,10 @@ public class RadialUi : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && open)
         {
-            createButton.GetComponent<CanvasGroup>().alpha = 0.0f;
-            upgradeButton.GetComponent<CanvasGroup>().alpha = 0.0f;
-            moveButton.GetComponent<CanvasGroup>().alpha = 0.0f;
-            deleteButton.GetComponent<CanvasGroup>().alpha = 0.0f;
+            setAlpha(0.0f);
             open = false;
         }
-
+        
         if (Input.GetMouseButtonDown(1))
         {
             gameObject.transform.position = Input.mousePosition;
@@ -58,12 +58,25 @@ public class RadialUi : MonoBehaviour
                 moveButton.GetComponent<Button>().interactable = false;
                 deleteButton.GetComponent<Button>().interactable = false;
             }
-            
-            createButton.GetComponent<CanvasGroup>().alpha = 1.0f;
-            upgradeButton.GetComponent<CanvasGroup>().alpha = 1.0f;
-            moveButton.GetComponent<CanvasGroup>().alpha = 1.0f;
-            deleteButton.GetComponent<CanvasGroup>().alpha = 1.0f;
+
+            setAlpha(1.0f);
             open = true;
         }
+    }
+
+    public void setAlpha(float alpha)
+    {
+        createButton.GetComponent<CanvasGroup>().alpha = alpha;
+        upgradeButton.GetComponent<CanvasGroup>().alpha = alpha;
+        moveButton.GetComponent<CanvasGroup>().alpha = alpha;
+        deleteButton.GetComponent<CanvasGroup>().alpha = alpha;
+    }
+
+    public void disableInteraction()
+    {
+        createButton.GetComponent<Button>().interactable = false;
+        upgradeButton.GetComponent<Button>().interactable = false;
+        moveButton.GetComponent<Button>().interactable = false;
+        deleteButton.GetComponent<Button>().interactable = false;
     }
 }
