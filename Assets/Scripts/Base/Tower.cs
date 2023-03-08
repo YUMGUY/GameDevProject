@@ -60,6 +60,11 @@ public class Tower : MonoBehaviour
         return towerBase;
     }
 
+    public void setPlacing(bool p)
+    {
+        placing = p;
+    }
+
     public Tuple<Vector3, bool> place(GameObject obj)
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -45,10 +45,11 @@ public class RadialUi : MonoBehaviour
                 Tuple<Vector2, float, int> snap = platform.getSnap();
                 gameObject.transform.position = Camera.main.WorldToScreenPoint(snap.Item1);
 
-                createButton.GetComponent<Button>().interactable = !platform.towerExists(); //Only allow create if tower is not already there
-                upgradeButton.GetComponent<Button>().interactable = true;
-                moveButton.GetComponent<Button>().interactable = true;
-                deleteButton.GetComponent<Button>().interactable = true;
+                bool onTower = platform.towerExists();
+                createButton.GetComponent<Button>().interactable = !onTower;
+                upgradeButton.GetComponent<Button>().interactable = onTower;
+                moveButton.GetComponent<Button>().interactable = onTower;
+                deleteButton.GetComponent<Button>().interactable = onTower;
             }
             else
             {

@@ -51,4 +51,13 @@ public class BuildDefense : MonoBehaviour
         defenseSprite = defense.GetComponentInChildren<SpriteRenderer>();
         numberOfClicks = 0;
     }
+
+    public void MoveDefense(GameObject def)
+    {
+        defense = def;
+        towerBase = defense.GetComponent<Tower>();
+        towerBase.setPlacing(true);
+        defenseSprite = defense.GetComponentInChildren<SpriteRenderer>();
+        numberOfClicks = 0;
+    }
 }

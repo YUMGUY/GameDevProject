@@ -13,21 +13,18 @@ public class RadialUiButton : MonoBehaviour
         gameObject.GetComponent<Button>().image.alphaHitTestMinimumThreshold = 0.5f;
     }
 
-    void clicked()
+    public void clicked()
     {
-        Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         if (buttonType == ButtonType.Move)
         {
-            platform.setCursorPos(cursorPos);
             if(platform.towerExists())
             {
-
+                GameObject tower = platform.delete();
+                gameObject.GetComponent<BuildDefense>().MoveDefense(tower);
             }
         }
         else if(buttonType == ButtonType.Delete)
         {
-            platform.setCursorPos(cursorPos);
             if(platform.towerExists())
             {
                 GameObject tower = platform.delete();
