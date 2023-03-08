@@ -11,6 +11,7 @@ public class RadialUi : MonoBehaviour
     [SerializeField] GameObject moveButton;
     [SerializeField] GameObject deleteButton;
     [SerializeField] Platform platform;
+    public GameObject uiWorldPos;
 
     private bool open;
 
@@ -31,19 +32,22 @@ public class RadialUi : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && open)
         {
             setAlpha(0.0f);
+            Destroy(uiWorldPos);
             open = false;
         }
         
         if (Input.GetMouseButtonDown(1))
         {
-            gameObject.transform.position = Input.mousePosition;
             Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            uiWorldPos = new GameObject();
+            uiWorldPos.transform.parent = platform.transform;
 
             if (platform.pointInBase(cursorPos))
             {
                 platform.setCursorPos(cursorPos);
                 Tuple<Vector2, float, int> snap = platform.getSnap();
-                gameObject.transform.position = Camera.main.WorldToScreenPoint(snap.Item1);
+                uiWorldPos.transform.position = snap.Item1;
 
                 bool onTower = platform.towerExists();
                 createButton.GetComponent<Button>().interactable = !onTower;
@@ -53,6 +57,7 @@ public class RadialUi : MonoBehaviour
             }
             else
             {
+                uiWorldPos.transform.position = cursorPos;
                 createButton.GetComponent<Button>().interactable = true;
                 upgradeButton.GetComponent<Button>().interactable = false;
                 moveButton.GetComponent<Button>().interactable = false;
@@ -61,6 +66,11 @@ public class RadialUi : MonoBehaviour
 
             setAlpha(1.0f);
             open = true;
+        }
+
+        if(uiWorldPos)
+        {
+            gameObject.transform.position = Camera.main.WorldToScreenPoint(uiWorldPos.transform.position);
         }
     }
 
