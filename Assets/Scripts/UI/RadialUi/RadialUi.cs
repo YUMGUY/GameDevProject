@@ -40,7 +40,7 @@ public class RadialUi : MonoBehaviour
         {
             Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            uiWorldPos = new GameObject();
+            uiWorldPos = new GameObject("Radial UI World Pos");
             uiWorldPos.transform.parent = platform.transform;
 
             if (platform.pointInBase(cursorPos))

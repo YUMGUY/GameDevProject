@@ -142,9 +142,7 @@ public class Platform : MonoBehaviour
             Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if(pointInBase(cursorPos))
             {
-                Debug.Log("Platform Right Clicked");
                 setCursorPos(cursorPos);
-                
             }
         }
     }
