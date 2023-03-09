@@ -21,31 +21,54 @@ using UnityEngine;
 /// for defeating an enemy.
 /// </para>
 /// </summary>
-public class OrbHunter : MonoBehaviour
+public class AI_OrbHunter : AI_Base
 {
     /// <summary> 
-    /// <c> orbLimit </c> is the number of orbs this enemy needs to collect to transition from
+    /// The number of orbs this enemy needs to collect to transition from
     /// orbHunting to PlayerHunting mode.
     /// </summary>
-    [SerializeField] int orbLimit = 5;
+    [SerializeField] int orbThreshold = 5;
 
     /// <summary> 
-    /// <c> currentOrbs </c> is the number of orbs this enemy has currently collected.
+    /// The number of orbs this enemy has currently collected.
     /// </summary>
-    [SerializeField] int currentOrbs = 0;
-
-    // TODO make enum instead?
-    [SerializeField] bool currentMode = false;
+    [SerializeField] int collectedOrbs = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Retarget();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // if no target try to find one
+        if (target == null)
+        {
+            Retarget();
+        }
+
+        // if Orb hunting
+        else if (collectedOrbs < orbThreshold)
+        {
+            // if on an orb pick it up
+            if (Vector3.Distance(transform.position, target.transform.position) < .01f)
+            {
+                // In theory this should always return true. However if something 
+                // weird goes down this extra check prevents us from deleting the player
+                if (target.tag == "Orb")
+                {
+                    Destroy(target);
+                    collectedOrbs++;
+                    if(collectedOrbs >= orbThreshold)
+                    {
+                        targetTags[0] = "Player";
+                    }
+                    Retarget();
+                }
+                
+            }
+        }
     }
 }

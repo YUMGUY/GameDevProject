@@ -9,18 +9,18 @@ public class AI_Base : MonoBehaviour
 {
     [SerializeField] LocomotionSystem locomotionSystem;
     [SerializeField] AttackSystem_Base attackSystem;
-    [SerializeField] string[] targetTags;
+    [SerializeField] protected string[] targetTags;
 
-    private GameObject target = null;
+    protected GameObject target = null;
 
-    private void Retarget()
+    protected void Retarget()
     {
 
         // validate all components
         //checkComponentsAreValid();
 
         // find and send target to ai components
-        target = findValidTargetWithTag(targetTags);
+        target = findClosestTargetWithTag(targetTags);
 
         if (locomotionSystem)
         {
@@ -48,8 +48,8 @@ public class AI_Base : MonoBehaviour
 
 
     // Helper functions
-    // finds closest valid target within scene from enemy
-    private GameObject findValidTargetWithTag(string[] tagsToFind)
+    // finds closest target within scene from enemy
+    protected GameObject findClosestTargetWithTag(string[] tagsToFind)
     {
         // find all with tags
         List<GameObject> targetList = findAllTargetsWithTagsList(tagsToFind);
@@ -78,7 +78,7 @@ public class AI_Base : MonoBehaviour
     }
 
     // Finds all targets with specified tags within scene
-    private List<GameObject> findAllTargetsWithTagsList(string[] tagsToFind)
+    protected List<GameObject> findAllTargetsWithTagsList(string[] tagsToFind)
     {
         List<GameObject> targetList = new List<GameObject>();
 
@@ -98,12 +98,5 @@ public class AI_Base : MonoBehaviour
             return new List<GameObject>();
         }
         return targetList;
-    }
-
-    // Depreciated, will be removing eventually
-    private void checkComponentsAreValid()
-    {
-        Debug.Assert(locomotionSystem != null, "Enemy: " + this.name.ToString() + " does not have it's locomotion script assigned");
-        Debug.Assert(attackSystem != null, "Enemy: " + this.name.ToString() + " does not have it's attack system script assigned");
     }
 }
