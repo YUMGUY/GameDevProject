@@ -37,16 +37,16 @@ public class AI_OrbHunter : AI_Base
     // Start is called before the first frame update
     void Start()
     {
-        Retarget();
+        Retarget(findClosestTargetWithTag(targetTags));
     }
 
-    // Update is called once per frame
+    // Used to determine when to retarget
     void Update()
     {
         // if no target try to find one
         if (target == null)
         {
-            Retarget();
+            Retarget(findClosestTargetWithTag(targetTags));            
         }
 
         // if Orb hunting
@@ -63,12 +63,54 @@ public class AI_OrbHunter : AI_Base
                     collectedOrbs++;
                     if(collectedOrbs >= orbThreshold)
                     {
-                        targetTags[0] = "Player";
+                        switchToPlayerHuntingMode();
                     }
-                    Retarget();
+                    Retarget(findClosestTargetWithTag(targetTags));
                 }
                 
             }
+        }
+    }
+
+    /// <summary>
+    /// <para>
+    /// Should be called when the conditions to switch modes are satisifed
+    /// </para>
+    /// <para>
+    /// Handles all logic associated with the change from OrbHunting to PlayerHunting mode
+    /// such as updating targetTags, updating the speed stat, playing particle and sound effects, etc.
+    /// </para>
+    /// </summary>
+    void switchToPlayerHuntingMode()
+    {
+        // change target candidates from orbs to the player
+        targetTags[0] = "Player";
+        // TODO increase speed of enemy
+    }
+
+    /// <summary>
+    /// <para>
+    /// Contains the logic that should run when the enemy dies (ex: drop orbs, sound effects,
+    /// particles, destroy/disable self, etc.
+    /// </para>
+    /// <para>
+    /// Killing this enemy in OrbHunting mode will cause it to drop all orbs it had absorbed in 
+    /// addition to the regular rewards for killing an enemy. Killing this enemy in PlayerHunting mode
+    /// will cause it to drop twice as many orbs as it had absorbed in addition to the regular rewards
+    /// for defeating an enemy.
+    /// </para>
+    /// </summary>
+    void onDeath()
+    {
+        // Died in OrbHunting mode. Drop collected orbs
+        if(collectedOrbs < orbThreshold)
+        {
+            // TODO spawn orbs
+        }
+        // Died in PlayerHunting mode. Drop 2x collected orbs
+        else
+        {
+            // TODO spawn orbs
         }
     }
 }
