@@ -13,28 +13,28 @@ public class AI_Base : MonoBehaviour
 
     protected GameObject target = null;
 
-    protected void Retarget()
+    /// <summary>
+    /// Set the target for all AI components
+    /// </summary>
+    /// <param name="newTarget">The object that will be set as the target for the AI components</param>
+    protected void Retarget(GameObject newTarget)
     {
-
-        // validate all components
-        //checkComponentsAreValid();
-
         // find and send target to ai components
-        target = findClosestTargetWithTag(targetTags);
+        target = newTarget;
 
         if (locomotionSystem)
         {
-            locomotionSystem.setTarget(target);
+            locomotionSystem.setTarget(newTarget);
         }
         if (attackSystem)
         {
-            attackSystem.setTarget(target);
+            attackSystem.setTarget(newTarget);
         }
     }
 
     private void Start()
     {
-        Retarget();
+        Retarget(findClosestTargetWithTag(targetTags));
     }
 
 
@@ -42,13 +42,19 @@ public class AI_Base : MonoBehaviour
     {
         if (target == null)
         {
-            Retarget();
+            Retarget(findClosestTargetWithTag(targetTags));
         }
     }
 
 
-    // Helper functions
-    // finds closest target within scene from enemy
+    /// <summary>
+    /// Finds the closest GameObject with any of the provided tags in the scene
+    /// </summary>
+    /// <param name="tagsToFind">The tags for which matching GameObjects will be returned</param>
+    /// <returns>
+    /// The closest GameObject matching any of the tags in <c>tagstoFind</c>.
+    /// If no GameObject matches the tags, <c>null is returned instead</c>
+    /// </returns>
     protected GameObject findClosestTargetWithTag(string[] tagsToFind)
     {
         // find all with tags
@@ -77,7 +83,14 @@ public class AI_Base : MonoBehaviour
         return closestObj;
     }
 
-    // Finds all targets with specified tags within scene
+    /// <summary>
+    /// Finds all targets with specified tags within a scene
+    /// </summary>
+    /// <param name="tagsToFind">The tags for which matching GameObjects will be returned</param>
+    /// <returns>
+    /// A List of GameObjects containing all the objects matching any tags in <c>tagsToFind</c>. 
+    /// If no matching GameObjects are found, an empty list will be returned.
+    /// </returns>
     protected List<GameObject> findAllTargetsWithTagsList(string[] tagsToFind)
     {
         List<GameObject> targetList = new List<GameObject>();
@@ -90,13 +103,6 @@ public class AI_Base : MonoBehaviour
 
         //Debug.Log(targetList.ToString());
 
-        // Something went wrong if no targets were found
-        if (targetList.Count == 0)
-        {
-            //Debug.Log(this.name.ToString() + ": unable to find target with tag");
-            //this.enabled = false; // turn off the script so nothing weird happens
-            return new List<GameObject>();
-        }
         return targetList;
     }
 }
