@@ -71,7 +71,7 @@ public class TowerUpgrade : MonoBehaviour
 
         foreach (Modifier mod in node.modifiers)
         {
-            var component = statusSystem.getEffectedComponent(mod.stat);
+            var component = statusSystem.getAffectedComponent(mod.stat);
             
             if (component == null)
             {
@@ -83,7 +83,7 @@ public class TowerUpgrade : MonoBehaviour
 
             if (mod.action == ModifierAction.MULTIPLY)
             {
-                component.SetStat(mod.stat, (float) (component.GetStat() * mod.amount));
+                component.SetStat(mod.stat, (float) (component.GetStat(mod.stat) * mod.amount));
             }
             else
             {

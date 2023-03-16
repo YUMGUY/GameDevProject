@@ -6,6 +6,6 @@ public class LocomotionTranslate : LocomotionSystem
 {
     public override void Target()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, effectiveSpeed * Time.deltaTime);
     }
 }

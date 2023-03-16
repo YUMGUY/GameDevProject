@@ -141,7 +141,7 @@ MonoBehaviour:
   attackSystem: {fileID: 0}
   targetTags:
   - Player
-  radius: 7
+  attractionRadius: 7
   playerCoreData: {fileID: 11400000, guid: 66b651cb5000d5b478f91d12dc7b758e, type: 2}
 --- !u!114 &5694513274385824337
 MonoBehaviour:
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6410c959596ba184e86713a51117b3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  baseSpeed: 2
+  effectiveSpeed: 2
   maxSpeed: 2
   isDirectMovement: 0
-  rawSpeed: 2

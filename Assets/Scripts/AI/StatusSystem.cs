@@ -21,13 +21,13 @@ public class StatusSystem : MonoBehaviour
         // to apply perminant damage once and never again
         if (se is StatDmgInstant || se.isStackable)
         {
-            se.Apply(this, getEffectedComponent(se.statToEffect));
+            se.Apply(this, getAffectedComponent(se.statToEffect));
         }
 
         else if (!activeEffects.Contains(se))
         {
             activeEffects.Add(se);
-            se.Apply(this, getEffectedComponent(se.statToEffect));
+            se.Apply(this, getAffectedComponent(se.statToEffect));
         }
     }
 
@@ -41,7 +41,7 @@ public class StatusSystem : MonoBehaviour
 
     // Adjust this function to get the correct component if a
     // new stat is being added!
-    public BaseAIComponent getEffectedComponent(Stats stat)
+    public BaseAIComponent getAffectedComponent(Stats stat)
     {
         switch (stat)
         {
@@ -49,6 +49,12 @@ public class StatusSystem : MonoBehaviour
                 return GetComponent<HealthComponent>();
             
             case Stats.SPEED:
+                return GetComponent<LocomotionSystem>();
+
+            case Stats.BASESPEED:
+                return GetComponent<LocomotionSystem>();
+
+            case Stats.MAXSPEED:
                 return GetComponent<LocomotionSystem>();
 
             /*

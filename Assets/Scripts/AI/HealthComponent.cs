@@ -59,9 +59,17 @@ public class HealthComponent : MonoBehaviour, BaseAIComponent
         }
     }
 
-    public float GetStat()
+    public float GetStat(Stats statToGet)
     {
-        return currentHealth;
+        switch (statToGet)
+        {
+            case Stats.HEALTH:
+                return currentHealth;
+
+            default:
+                Debug.Log("Error: Invalid Stat requested");
+                return 0;
+        }
     }
 
     /// If healing occured the OnHeal event will be invoked.
@@ -82,18 +90,4 @@ public class HealthComponent : MonoBehaviour, BaseAIComponent
             OnDamageTaken.Invoke(amount);
         }
     }
-
-    /*
-    bool IsValidCompStat(Stats statToCheck)
-    {
-        switch (statToCheck)
-        {
-            case Stats.HEALTH:
-                return true;
-
-            default:
-                return false;
-        }
-    }
-    */
 }

@@ -7,8 +7,8 @@ using UnityEngine;
  */
 public class AI_Base : MonoBehaviour
 {
-    [SerializeField] LocomotionSystem locomotionSystem;
-    [SerializeField] AttackSystem_Base attackSystem;
+    [SerializeField] protected LocomotionSystem locomotionSystem;
+    [SerializeField] protected AttackSystem_Base attackSystem;
     [SerializeField] protected string[] targetTags;
 
     protected GameObject target = null;

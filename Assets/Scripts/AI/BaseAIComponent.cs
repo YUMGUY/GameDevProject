@@ -16,5 +16,5 @@ public interface BaseAIComponent
     // bool IsValidCompStat(Stats statToCheck);
 
     // Retrieves value of a given stat
-    float GetStat();
+    float GetStat(Stats statToGet);
 }

@@ -75,7 +75,11 @@ public class OrbHunter : AI_Base
     {
         // change target candidates from orbs to the player
         targetTags[0] = "Player";
-        // TODO increase speed of enemy
+
+        // increase speed of enemy
+        locomotionSystem.SetStat(Stats.MAXSPEED, locomotionSystem.GetStat(Stats.MAXSPEED) * 2);
+        locomotionSystem.SetStat(Stats.BASESPEED, locomotionSystem.GetStat(Stats.BASESPEED) * 2);
+        locomotionSystem.SetStat(Stats.SPEED, locomotionSystem.GetStat(Stats.SPEED) * 2);
     }
 
     /// <summary>
