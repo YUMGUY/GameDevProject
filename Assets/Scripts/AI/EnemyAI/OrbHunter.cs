@@ -21,7 +21,7 @@ using UnityEngine;
 /// for defeating an enemy.
 /// </para>
 /// </summary>
-public class AI_OrbHunter : AI_Base
+public class OrbHunter : AI_Base
 {
     /// <summary> 
     /// The number of orbs this enemy needs to collect to transition from
@@ -48,27 +48,17 @@ public class AI_OrbHunter : AI_Base
         {
             Retarget(findClosestTargetWithTag(targetTags));            
         }
+    }
 
-        // if Orb hunting
-        else if (collectedOrbs < orbThreshold)
+    /// <summary>
+    /// Increments the collected orbs. If collected orbs equal or exceed the threshold, also calls SwitchToPlayerHuntingMode
+    /// </summary>
+    public void IncrementOrbs()
+    {
+        collectedOrbs++;
+        if (collectedOrbs >= orbThreshold)
         {
-            // if on an orb pick it up
-            if (Vector3.Distance(transform.position, target.transform.position) < .01f)
-            {
-                // In theory this should always return true. However if something 
-                // weird goes down this extra check prevents us from deleting the player
-                if (target.tag == "Orb")
-                {
-                    Destroy(target);
-                    collectedOrbs++;
-                    if(collectedOrbs >= orbThreshold)
-                    {
-                        switchToPlayerHuntingMode();
-                    }
-                    Retarget(findClosestTargetWithTag(targetTags));
-                }
-                
-            }
+            SwitchToPlayerHuntingMode();
         }
     }
 
@@ -81,7 +71,7 @@ public class AI_OrbHunter : AI_Base
     /// such as updating targetTags, updating the speed stat, playing particle and sound effects, etc.
     /// </para>
     /// </summary>
-    void switchToPlayerHuntingMode()
+    void SwitchToPlayerHuntingMode()
     {
         // change target candidates from orbs to the player
         targetTags[0] = "Player";
@@ -91,7 +81,7 @@ public class AI_OrbHunter : AI_Base
     /// <summary>
     /// <para>
     /// Contains the logic that should run when the enemy dies (ex: drop orbs, sound effects,
-    /// particles, destroy/disable self, etc.
+    /// particles, destroy self, etc.
     /// </para>
     /// <para>
     /// Killing this enemy in OrbHunting mode will cause it to drop all orbs it had absorbed in 
@@ -100,17 +90,24 @@ public class AI_OrbHunter : AI_Base
     /// for defeating an enemy.
     /// </para>
     /// </summary>
-    void onDeath()
+    public void DestroyObject()
     {
-        // Died in OrbHunting mode. Drop collected orbs
-        if(collectedOrbs < orbThreshold)
+        // Drop orbs
+        // TODO spawn orbs
+        //GameObject drop = Instantiate(orb);
+        //drop.transform.position = transform.position;
+
+        // Died in OrbHunting mode. Also drop collected orbs
+        if (collectedOrbs < orbThreshold)
         {
             // TODO spawn orbs
         }
-        // Died in PlayerHunting mode. Drop 2x collected orbs
+        // Died in PlayerHunting mode. Alos drop 2x collected orbs
         else
         {
             // TODO spawn orbs
         }
+
+        Destroy(gameObject);
     }
 }

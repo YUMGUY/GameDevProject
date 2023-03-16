@@ -65,7 +65,6 @@ public class BaseProjectile : MonoBehaviour
                 Destroy(self);
             }
 
-            //collision.GetComponent<HealthComponent>().DamageStat(Stats.HEALTH, damage);
             StatusSystem statSys = collision.GetComponent<StatusSystem>();
             if (statSys)
             {
