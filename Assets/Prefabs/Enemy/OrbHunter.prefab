@@ -147,8 +147,8 @@ MonoBehaviour:
   attackSystem: {fileID: 0}
   targetTags:
   - Orb
-  orbThreshold: 1
-  collectedOrbs: 1
+  orbThreshold: 4
+  collectedOrbs: 0
 --- !u!114 &5250791028977661777
 MonoBehaviour:
   m_ObjectHideFlags: 0
