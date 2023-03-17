@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locomotionSystem: {fileID: 5694513274385824337}
   attackSystem: {fileID: 0}
+  orbSpawner: {fileID: 0}
   targetTags:
   - Player
   attractionRadius: 7

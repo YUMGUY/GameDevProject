@@ -80,6 +80,9 @@ public class OrbHunter : AI_Base
         locomotionSystem.SetStat(Stats.MAXSPEED, locomotionSystem.GetStat(Stats.MAXSPEED) * 2);
         locomotionSystem.SetStat(Stats.BASESPEED, locomotionSystem.GetStat(Stats.BASESPEED) * 2);
         locomotionSystem.SetStat(Stats.SPEED, locomotionSystem.GetStat(Stats.SPEED) * 2);
+
+        // VFX/SFX go here eventually
+        // TODO
     }
 
     /// <summary>
@@ -97,19 +100,21 @@ public class OrbHunter : AI_Base
     public void DestroyObject()
     {
         // Drop orbs
-        // TODO spawn orbs
-        //GameObject drop = Instantiate(orb);
-        //drop.transform.position = transform.position;
+        if(orbSpawner != null)
+        {
+            // Drop default death orb
+            orbSpawner.SpawnOrb();
 
-        // Died in OrbHunting mode. Also drop collected orbs
-        if (collectedOrbs < orbThreshold)
-        {
-            // TODO spawn orbs
-        }
-        // Died in PlayerHunting mode. Alos drop 2x collected orbs
-        else
-        {
-            // TODO spawn orbs
+            // Died in OrbHunting mode. Also drop collected orbs
+            if (collectedOrbs < orbThreshold)
+            {
+                orbSpawner.SpawnOrbsInRadius(collectedOrbs, 2);
+            }
+            // Died in PlayerHunting mode. Also drop 2x collected orbs
+            else
+            {
+                orbSpawner.SpawnOrbsInRadius(collectedOrbs * 2, 2);
+            }
         }
 
         Destroy(gameObject);

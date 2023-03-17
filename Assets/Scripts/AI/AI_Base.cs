@@ -9,6 +9,7 @@ public class AI_Base : MonoBehaviour
 {
     [SerializeField] protected LocomotionSystem locomotionSystem;
     [SerializeField] protected AttackSystem_Base attackSystem;
+    [SerializeField] protected OrbSpawner orbSpawner;
     [SerializeField] protected string[] targetTags;
 
     protected GameObject target = null;
