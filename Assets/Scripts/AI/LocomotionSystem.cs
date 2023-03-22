@@ -11,10 +11,6 @@ public abstract class LocomotionSystem : MonoBehaviour, BaseAIComponent
     /// Clamped between 0 and maxSpeed.
     /// </summary>
     [SerializeField] protected float baseSpeed;
-    [SerializeField] protected float effectiveSpeed;
-    [SerializeField] protected float maxSpeed;
-    [SerializeField] protected bool isDirectMovement;
-    [System.NonSerialized] protected GameObject target = null;
 
     /// <summary>
     /// The effective speed at which to move the object. Clamped between 0 and maxSpeed
@@ -41,7 +37,7 @@ public abstract class LocomotionSystem : MonoBehaviour, BaseAIComponent
     void Start()
     {
         effectiveSpeed = baseSpeed;
-        GetComponent<StatusSystem>().RegisterAIComponent(this, Stats.BASESPEED, Stats.SPEED, Speed.MAXSPEED);
+        GetComponent<StatusSystem>().RegisterAIComponent(this, Stats.BASESPEED, Stats.SPEED, Stats.MAXSPEED);
     }
 
     // Update is called once per frame
