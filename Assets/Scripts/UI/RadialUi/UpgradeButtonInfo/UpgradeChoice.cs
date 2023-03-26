@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UpgradeChoice : MonoBehaviour
@@ -13,7 +14,8 @@ public class UpgradeChoice : MonoBehaviour
     {
         if(chosenUpgrade != null)
         {
-            this.transform.GetComponentInChildren<TextMeshProUGUI>().text = chosenUpgrade.title;
+            transform.GetComponentInChildren<TextMeshProUGUI>().text = "";
+            gameObject.GetComponent<Image>().sprite = chosenUpgrade.icon;
         }
        
     }
@@ -22,6 +24,5 @@ public class UpgradeChoice : MonoBehaviour
         // apply it one time
         print("applied upgrade: " + chosenUpgrade.title);
         radialUIref.selectedGameObject.GetComponent<TowerUpgrade>().BuyUpgrade(chosenUpgrade);
-        
     }
 }
