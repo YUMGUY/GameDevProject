@@ -8,7 +8,7 @@ using UnityEngine;
 public class AI_Base : MonoBehaviour
 {
     [SerializeField] protected LocomotionSystem locomotionSystem;
-    [SerializeField] protected AttackSystem_Base attackSystem;
+    [SerializeField] ProjectileSystem projectileSystem;
     [SerializeField] protected OrbSpawner orbSpawner;
     [SerializeField] protected string[] targetTags;
 
@@ -27,14 +27,24 @@ public class AI_Base : MonoBehaviour
         {
             locomotionSystem.setTarget(newTarget);
         }
-        if (attackSystem)
+        if (projectileSystem)
         {
-            attackSystem.setTarget(newTarget);
+            projectileSystem.setTarget(target);
         }
     }
 
     private void Start()
     {
+        // Attempt to find the locomotion and projectile system
+        if(locomotionSystem == null) 
+        { 
+            locomotionSystem = gameObject.GetComponent<LocomotionSystem>(); 
+        }
+        if (projectileSystem == null)
+        {
+            projectileSystem = gameObject.GetComponent<ProjectileSystem>();
+        }
+
         Retarget(findClosestTargetWithTag(targetTags));
     }
 

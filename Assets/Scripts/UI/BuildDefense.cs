@@ -7,6 +7,7 @@ public class BuildDefense : MonoBehaviour
 {
     public bool spawning;
     public Transform parentBase;
+    [SerializeField] Platform platform;
     public GameObject objectSpawned;
     public GameObject defense;
 
@@ -23,7 +24,7 @@ public class BuildDefense : MonoBehaviour
             {
                 numberOfClicks = 1;
                 defense.GetComponent<AI_Base>().enabled = true; //Turn the AI on once placed
-                defenseSprite.color = new Color(0f, 0f, 0f, 1f);
+                defenseSprite.color = new Color(1f, 1f, 1f, 1f);
                 spawning = false;
             }
         }
@@ -40,16 +41,20 @@ public class BuildDefense : MonoBehaviour
 
     public void BuyDefense()
     {
-        defense = Instantiate(objectSpawned);
+        if (!spawning)
+        {
+            defense = Instantiate(objectSpawned);
 
-        towerBase = defense.AddComponent<Tower>();
-        towerBase.parent = parentBase.gameObject;
-        defense.transform.parent = towerBase.getTowerBase().transform;
+            towerBase = defense.AddComponent<Tower>();
+            towerBase.parent = parentBase.gameObject;
+            towerBase.platform = platform;
+            defense.transform.parent = towerBase.getTowerBase().transform;
 
-        defense.GetComponent<AI_Base>().enabled = false; //Turn off the AI while placing
+            defense.GetComponent<AI_Base>().enabled = false; //Turn off the AI while placing
 
-        defenseSprite = defense.GetComponentInChildren<SpriteRenderer>();
-        numberOfClicks = 0;
+            defenseSprite = defense.GetComponentInChildren<SpriteRenderer>();
+            numberOfClicks = 0;
+        }
     }
 
     public void MoveDefense(GameObject def)

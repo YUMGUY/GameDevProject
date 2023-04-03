@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System;
 
 public class RadialUiButton : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class RadialUiButton : MonoBehaviour
     [SerializeField] CoreData coreData;
 
     public bool coreClicked = false;
+    public Tuple<Vector2, int, int> snap;
 
     void Start()
     {
@@ -19,7 +22,7 @@ public class RadialUiButton : MonoBehaviour
 
     public void clicked()
     {
-        if(buttonType == ButtonType.Create)
+        if (buttonType == ButtonType.Create)
         {
             gameObject.GetComponent<BuildDefense>().BuyDefense();
         }
@@ -31,22 +34,48 @@ public class RadialUiButton : MonoBehaviour
             }
             else
             {
+                radialUi.UpgradeScreenPanel.SetActive(true);
+                radialUi.BuildingPhaseOn();
+                // then create amount of buttons available in tower's upgrade tree
+                List<Upgrade> upgrades = radialUi.selectedGameObject.GetComponent<TowerUpgrade>().GetBuyableUpgrades();
+                
+                // FIXME: code better positioning of choices
+                float ypos = 225f;
+                float xpos = 0;
+                for(int i = 0; i < upgrades.Count; ++i)
+                {
+                    if(ypos <= -225f)
+                    {
+                        ypos = 150f;
+                        xpos += 100;
+                    }
+                    // instantiate upgrade choice buttons prefab
+                    GameObject createdButton = Instantiate(radialUi.upgradeButtonPrefab, radialUi.UpgradeScreenPanel.transform);
+                    createdButton.transform.localPosition = new Vector3(xpos, ypos, 0);
 
+                    // FIXME: Figure out how to scale the icons properly
+                    createdButton.transform.localScale = new Vector3(1f, 3.5f, 1f);
+                    UpgradeChoice button_Upgrade = createdButton.GetComponent<UpgradeChoice>();
+                    button_Upgrade.chosenUpgrade = upgrades[i];
+                    button_Upgrade.radialUIref = radialUi;
+                    ypos -= 125f;
+                }
+            
             }
         }
         if (buttonType == ButtonType.Move)
         {
-            if(platform.towerExists())
+            if(snap != null && platform.towerExists(snap.Item2, snap.Item3))
             {
-                GameObject tower = platform.delete();
+                GameObject tower = platform.delete(snap.Item2, snap.Item3);
                 gameObject.GetComponent<BuildDefense>().MoveDefense(tower);
             }
         }
         else if(buttonType == ButtonType.Delete)
         {
-            if(platform.towerExists())
+            if(snap != null && platform.towerExists(snap.Item2, snap.Item3))
             {
-                GameObject tower = platform.delete();
+                GameObject tower = platform.delete(snap.Item2, snap.Item3);
                 Destroy(tower);
             }
         }
