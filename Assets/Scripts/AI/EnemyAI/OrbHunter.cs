@@ -77,9 +77,9 @@ public class OrbHunter : AI_Base
         targetTags[0] = "Player";
 
         // increase speed of enemy
-        locomotionSystem.SetStat(Stats.MAXSPEED, locomotionSystem.GetStat(Stats.MAXSPEED) * 2);
-        locomotionSystem.SetStat(Stats.BASESPEED, locomotionSystem.GetStat(Stats.BASESPEED) * 2);
-        locomotionSystem.SetStat(Stats.SPEED, locomotionSystem.GetStat(Stats.SPEED) * 2);
+        locomotionSystem.SetStat(Stats.MAXSPEED, locomotionSystem.GetStat(Stats.MAXSPEED)[0] * 2);
+        locomotionSystem.SetStat(Stats.BASESPEED, locomotionSystem.GetStat(Stats.BASESPEED)[0] * 2);
+        locomotionSystem.SetStat(Stats.SPEED, locomotionSystem.GetStat(Stats.SPEED)[0] * 2);
 
         // VFX/SFX go here eventually
         // TODO
