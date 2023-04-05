@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 8176211403254085240}
   - component: {fileID: 8176211403254085243}
   - component: {fileID: 5694513274385824338}
-  - component: {fileID: 5694513274385824337}
-  - component: {fileID: 5382009726976872727}
   m_Layer: 0
   m_Name: power orb
   m_TagString: Orb
@@ -138,39 +136,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc36c69f8a75bb4c810fc7e3a58526b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locomotionSystem: {fileID: 5694513274385824337}
-  projectileSystem: {fileID: 0}
-  orbSpawner: {fileID: 0}
-  targetTags:
-  - Player
-  attractionRadius: 7
-  playerCoreData: {fileID: 11400000, guid: 66b651cb5000d5b478f91d12dc7b758e, type: 2}
---- !u!114 &5694513274385824337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8176211403254085244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6410c959596ba184e86713a51117b3c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseSpeed: 2
-  effectiveSpeed: 2
-  maxSpeed: 2
-  isDirectMovement: 0
---- !u!114 &5382009726976872727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8176211403254085244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c240ec1ab5d70c54ea75b1bf1c746517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeEffects: []
