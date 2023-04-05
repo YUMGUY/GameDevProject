@@ -18,9 +18,9 @@ GameObject:
   - component: {fileID: 481477862952636339}
   - component: {fileID: -1541882329994755046}
   - component: {fileID: 6400432567666431771}
-  - component: {fileID: -7529451405930207508}
+  - component: {fileID: -324993352434983868}
   m_Layer: 8
-  m_Name: Basic Enemy Green
+  m_Name: SnipeFly
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1998198589, guid: dde8db814ff74664c9f6d8c8829fd7d6, type: 3}
+  m_Sprite: {fileID: -1910190881, guid: b665260df736e56499887ae04cce85ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,14 +110,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 2.77}
+    oldSize: {x: 2.72, y: 3.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.45, y: 2.3}
   m_EdgeRadius: 0
 --- !u!114 &8425825489313815657
 MonoBehaviour:
@@ -236,7 +236,7 @@ Animator:
   m_GameObject: {fileID: 962644661464884768}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6ccff755625c58c409cc35a353c29409, type: 2}
+  m_Controller: {fileID: 9100000, guid: 175eae2a4383a2944b94c1e02f9733a1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -246,7 +246,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &-7529451405930207508
+--- !u!114 &-324993352434983868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
