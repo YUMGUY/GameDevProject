@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 8176211403254085240}
   - component: {fileID: 8176211403254085243}
   - component: {fileID: 5694513274385824338}
-  - component: {fileID: 4499453735377373805}
-  - component: {fileID: 4499453735377373802}
   - component: {fileID: 8803438237133047177}
   m_Layer: 0
   m_Name: power orb
@@ -142,7 +140,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4499453735377373803}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a1bbb99335ef102448ebde9441580522, type: 2}
