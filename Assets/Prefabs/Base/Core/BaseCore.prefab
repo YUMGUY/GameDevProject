@@ -106,9 +106,8 @@ MonoBehaviour:
   - 1.5
   - 2.5
   - 3.5
-  displayRing: 0
-  defaultStartingSections: 4
-  ringZ: 0.9
+  towers: []
+  baseSprites: []
 --- !u!114 &3427060630855968915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,10 +157,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3427060631853910638}
   - component: {fileID: 3427060631853910549}
-  - component: {fileID: 3427060631853910634}
   - component: {fileID: 3427060631853910635}
   - component: {fileID: 3427060631853910632}
   - component: {fileID: 3427060631853910633}
+  - component: {fileID: 1008422401266858957}
+  - component: {fileID: 8277700669790786669}
   m_Layer: 6
   m_Name: BaseCore
   m_TagString: Untagged
@@ -237,21 +237,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3427060631853910634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427060631372646993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f751413297a3541916473921103498, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  orbTag: Orb
-  coreData: {fileID: 11400000, guid: 66b651cb5000d5b478f91d12dc7b758e, type: 2}
 --- !u!114 &3427060631853910635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  map: {fileID: 0}
+  platform: {fileID: 0}
 --- !u!61 &3427060631853910632
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -308,3 +295,58 @@ MonoBehaviour:
   lineMaterial: {fileID: 0}
   lineColor: {r: 0, g: 0, b: 0, a: 0}
   lineWidth: 0.3
+--- !u!114 &1008422401266858957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427060631372646993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0846763d7fb6441b58dd4605a33b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Player
+--- !u!114 &8277700669790786669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427060631372646993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f751413297a3541916473921103498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attractionRadius: 10
+  maxSpeed: 8
+  minSpeed: 2
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  orbTag: Orb
+  coreData: {fileID: 11400000, guid: 66b651cb5000d5b478f91d12dc7b758e, type: 2}

@@ -128,10 +128,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 962644661464884768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5904033ac6fff1a46b2365534b6dd599, type: 3}
+  m_Script: {fileID: 11500000, guid: 8777c8f95ee717c4083ec0dff353c3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orb: {fileID: 4499453735377373803, guid: 65fac8a9fa4de3a4281b71db9f24bab6, type: 3}
+  orb: {fileID: 8176211403254085244, guid: 65fac8a9fa4de3a4281b71db9f24bab6, type: 3}
   animController: {fileID: 0}
 --- !u!114 &9074310293624954182
 MonoBehaviour:
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locomotionSystem: {fileID: 7956958413074660310}
   projectileSystem: {fileID: 4445653251142912815}
+  orbSpawner: {fileID: 0}
   targetTags:
   - Player
 --- !u!114 &7956958413074660310
@@ -161,10 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6410c959596ba184e86713a51117b3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseSpeed: 2
   effectiveSpeed: 2
   maxSpeed: 5
   isDirectMovement: 0
-  rawSpeed: 0
 --- !u!114 &4445653251142912815
 MonoBehaviour:
   m_ObjectHideFlags: 0

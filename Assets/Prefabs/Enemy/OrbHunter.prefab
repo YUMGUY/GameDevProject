@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &962644661464884768
+--- !u!1 &3165543600625937063
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 962644661464884782}
-  - component: {fileID: 962644661464884783}
-  - component: {fileID: 1693474713711860434}
-  - component: {fileID: 8425825489313815657}
-  - component: {fileID: 9074310293624954182}
-  - component: {fileID: 7956958413074660310}
-  - component: {fileID: 4445653251142912815}
-  - component: {fileID: 481477862952636339}
-  - component: {fileID: -1541882329994755046}
-  - component: {fileID: 6400432567666431771}
-  - component: {fileID: -324993352434983868}
+  - component: {fileID: 3165543600625937065}
+  - component: {fileID: 3165543600625937064}
+  - component: {fileID: 3544943538166650453}
+  - component: {fileID: 6583180977616720323}
+  - component: {fileID: 6583180977616720320}
+  - component: {fileID: 5250791028977661777}
+  - component: {fileID: 2313944806064784180}
+  - component: {fileID: 5487749578267396253}
+  - component: {fileID: 2634554745425402997}
   m_Layer: 8
-  m_Name: SnipeFly
+  m_Name: OrbHunter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &962644661464884782
+--- !u!4 &3165543600625937065
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
+  m_GameObject: {fileID: 3165543600625937063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.2, y: -2.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &962644661464884783
+--- !u!212 &3165543600625937064
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
+  m_GameObject: {fileID: 3165543600625937063}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -81,9 +79,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: -1910190881, guid: b665260df736e56499887ae04cce85ad, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,13 +91,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1693474713711860434
+--- !u!61 &3544943538166650453
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
+  m_GameObject: {fileID: 3165543600625937063}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -110,102 +108,92 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.72, y: 3.2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.45, y: 2.3}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8425825489313815657
+--- !u!114 &6583180977616720323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
+  m_GameObject: {fileID: 3165543600625937063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8777c8f95ee717c4083ec0dff353c3b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c0846763d7fb6441b58dd4605a33b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orb: {fileID: 8176211403254085244, guid: 65fac8a9fa4de3a4281b71db9f24bab6, type: 3}
-  animController: {fileID: 0}
---- !u!114 &9074310293624954182
+  tags:
+  - Enemy
+  - OrbHunter
+--- !u!114 &6583180977616720320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
+  m_GameObject: {fileID: 3165543600625937063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f08fe0b77627d15478868b4f85209cbc, type: 3}
+  m_Script: {fileID: 11500000, guid: 01fdb5ea6d212394a8365e8dcfb33006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locomotionSystem: {fileID: 7956958413074660310}
-  projectileSystem: {fileID: 4445653251142912815}
-  orbSpawner: {fileID: 0}
+  locomotionSystem: {fileID: 5250791028977661777}
+  attackSystem: {fileID: 0}
+  orbSpawner: {fileID: 2634554745425402997}
   targetTags:
-  - Player
---- !u!114 &7956958413074660310
+  - Orb
+  orbThreshold: 4
+  collectedOrbs: 0
+--- !u!114 &5250791028977661777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
+  m_GameObject: {fileID: 3165543600625937063}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6410c959596ba184e86713a51117b3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 2
-  effectiveSpeed: 2
+  baseSpeed: 4
+  effectiveSpeed: 4
   maxSpeed: 5
   isDirectMovement: 0
---- !u!114 &4445653251142912815
+--- !u!114 &2313944806064784180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd03adf62481a84a830ab4dc0cf4624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectiles: []
---- !u!114 &481477862952636339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
+  m_GameObject: {fileID: 3165543600625937063}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c240ec1ab5d70c54ea75b1bf1c746517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activeEffects: []
---- !u!114 &-1541882329994755046
+--- !u!114 &5487749578267396253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
+  m_GameObject: {fileID: 3165543600625937063}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4548c2ca39c475245be9575695a0442d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
-  effectiveHealth: 0
+  currentHealth: 5
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls: []
@@ -215,9 +203,9 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8425825489313815657}
-        m_TargetAssemblyTypeName: EnemyOrbSystem, Assembly-CSharp
-        m_MethodName: DropOrb
+      - m_Target: {fileID: 6583180977616720320}
+        m_TargetAssemblyTypeName: AI_OrbHunter, Assembly-CSharp
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -227,37 +215,16 @@ MonoBehaviour:
           m_StringArgument: DropOrb
           m_BoolArgument: 0
         m_CallState: 2
---- !u!95 &6400432567666431771
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 175eae2a4383a2944b94c1e02f9733a1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
---- !u!114 &-324993352434983868
+--- !u!114 &2634554745425402997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962644661464884768}
+  m_GameObject: {fileID: 3165543600625937063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b23a8e64dfb6b41b85b83497bdd6bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 7389a3dae78d13b448e0aed93cd252b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRef: {fileID: 0}
-  doneSpawning: 0
+  orbPrefab: {fileID: 8176211403254085244, guid: 65fac8a9fa4de3a4281b71db9f24bab6, type: 3}

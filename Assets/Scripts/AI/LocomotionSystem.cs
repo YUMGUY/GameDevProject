@@ -6,21 +6,38 @@ using UnityEngine;
 public abstract class LocomotionSystem : MonoBehaviour, BaseAIComponent
 {
 
-    [SerializeField] protected float effectiveSpeed;
-    [SerializeField] protected float maxSpeed;
-    [SerializeField] protected bool isDirectMovement;
-    [System.NonSerialized] protected GameObject target = null;
+    /// <summary>
+    /// The default speed value. Should not be modified unless the default value is changing.
+    /// Clamped between 0 and maxSpeed.
+    /// </summary>
+    [SerializeField] protected float baseSpeed;
 
-    // without bounds, used to calculate status changes, so stackable
-    // status do not step on each others toes when reverting damage, ect
-    public float rawSpeed;
+    /// <summary>
+    /// The effective speed at which to move the object. Clamped between 0 and maxSpeed
+    /// </summary>
+    [SerializeField] protected float effectiveSpeed;
+
+    /// <summary>
+    /// The maximum value to which baseSpeed and effectiveSpeed are capped. Cannot be less than 0.
+    /// </summary>
+    [SerializeField] protected float maxSpeed;
+
+    /// <summary>
+    /// No idea what this is. TODO I guess.
+    /// </summary>
+    [SerializeField] protected bool isDirectMovement;
+
+    /// <summary>
+    /// The target the locomotion system should move the object towards
+    /// </summary>
+    [System.NonSerialized] protected GameObject target = null;
 
     public abstract void Target();
 
     void Start()
     {
-        rawSpeed = effectiveSpeed;
         RegCompToStatSystem();
+        effectiveSpeed = baseSpeed;
     }
 
     // Update is called once per frame
@@ -42,12 +59,21 @@ public abstract class LocomotionSystem : MonoBehaviour, BaseAIComponent
         switch (statToDamage)
         {
             case Stats.SPEED:
-                rawSpeed -= amount;
+                effectiveSpeed -= amount;
+                effectiveSpeed = Mathf.Clamp(effectiveSpeed, 0.0f, maxSpeed);
+                return;
 
+            case Stats.MAXSPEED:
+                maxSpeed -= amount;
+                if(maxSpeed < 0.0f)
+                {
+                    maxSpeed = 0.0f;
+                }
+                return;
 
-                // prevent healing past maxHealth
-                // give small wiggle room to protect against float inaccuracies
-                effectiveSpeed = Mathf.Clamp(rawSpeed, 0.0f, maxSpeed);
+            case Stats.BASESPEED:
+                baseSpeed -= amount;
+                baseSpeed = Mathf.Clamp(baseSpeed, 0.0f, maxSpeed);
                 return;
 
             default:
@@ -55,15 +81,26 @@ public abstract class LocomotionSystem : MonoBehaviour, BaseAIComponent
         }
     }
 
-    public void SetStat(Stats statToDamage, float value)
+    public void SetStat(Stats statToSet, float value)
     {
-        switch (statToDamage)
+        switch (statToSet)
         {
             case Stats.SPEED:
-                rawSpeed = value;
+                effectiveSpeed = value;
+                effectiveSpeed = Mathf.Clamp(effectiveSpeed, 0.0f, maxSpeed);
+                return;
 
-                // we don't want to have negative speed
-                effectiveSpeed = Mathf.Clamp(rawSpeed, 0.0f, maxSpeed);
+            case Stats.MAXSPEED:
+                maxSpeed = value;
+                if (maxSpeed < 0.0f)
+                {
+                    maxSpeed = 0.0f;
+                }
+                return;
+
+            case Stats.BASESPEED:
+                baseSpeed = value;
+                baseSpeed = Mathf.Clamp(baseSpeed, 0.0f, maxSpeed);
                 return;
 
             default:
@@ -78,6 +115,12 @@ public abstract class LocomotionSystem : MonoBehaviour, BaseAIComponent
             case Stats.SPEED:
                 return new List<float> { effectiveSpeed };
 
+            case Stats.MAXSPEED:
+                return new List<float> { maxSpeed };
+
+            case Stats.BASESPEED:
+                return new List<float> { baseSpeed };
+
             default:
                 return null;
         }
@@ -85,6 +128,6 @@ public abstract class LocomotionSystem : MonoBehaviour, BaseAIComponent
 
     public void RegCompToStatSystem()
     {
-        GetComponent<StatusSystem>().RegisterAIComponent(this, Stats.SPEED);
+        GetComponent<StatusSystem>().RegisterAIComponent(this, Stats.BASESPEED, Stats.SPEED, Stats.MAXSPEED);
     }
 }
