@@ -30,7 +30,8 @@ public class UpgradeTreeEditor : Editor
     Vector2 scrollPosition = Vector2.zero;
     Vector2 scrollStartPos;
 
-    (UpgradeNode node, Rect? rect, HashSet<int> prereqs, SerializedObject list) active;
+    (UpgradeNode node, Rect? rect, HashSet<int> prereqs, SerializedObject list, SerializedObject projectiles) active;
+    SerializedObject sapso;
 
     HashSet<KeyCode> keydown;
 
@@ -44,6 +45,8 @@ public class UpgradeTreeEditor : Editor
         EditorSceneManager.sceneSaving += OnSceneSave;
         EditorSceneManager.sceneClosing += OnSceneClose;
         Undo.undoRedoPerformed += OnUndo;
+
+        sapso = CreateTemporaryAPSO();
     }
 
     private void OnSceneClose(UnityEngine.SceneManagement.Scene scene, bool removingScene)
@@ -138,12 +141,12 @@ public class UpgradeTreeEditor : Editor
     {
         if (node == null)
         {
-            active = (null, null, null, null);
+            active = (null, null, null, null, null);
             return;
         }
 
         int idx = tree.IndexOf(node);
-        active = (node, rect, tree.GetAncestors(idx, true), CreateTemporaryMSO());
+        active = (node, rect, tree.GetAncestors(idx, true), CreateTemporaryMSO(), CreateTemporaryAPSO());
     }
 
     private SerializedObject CreateTemporaryMSO()
@@ -155,6 +158,15 @@ public class UpgradeTreeEditor : Editor
         SerializedObject smso = new SerializedObject(mso);
 
         return smso;
+    }
+
+    private SerializedObject CreateTemporaryAPSO()
+    {
+        AttackPropertiesSO apso = CreateInstance<AttackPropertiesSO>();
+        apso.Init();
+        SerializedObject sapso = new SerializedObject(apso);
+
+        return sapso;
     }
 
     private void PropertyLayout<T>(string label, ref T property)
@@ -431,6 +443,8 @@ public class UpgradeTreeEditor : Editor
                         PropertyLayout("Title", ref active.node.title);
                         PropertyLayout("Description", ref active.node.description);
                         PropertyLayout("Cost", ref active.node.cost);
+                        PropertyLayout("Icon", ref active.node.icon);
+                        PropertyLayout("Zone", ref active.node.zone);
                         PropertyLayout("Is Owned", ref active.node.bought);
 
                         EditorGUILayout.BeginHorizontal();
@@ -448,50 +462,48 @@ public class UpgradeTreeEditor : Editor
                 {
                     EditorGUILayout.LabelField("Sprite Options", GUILayout.MaxWidth(3f * columnWidth));
 
-                    PropertyLayout("Inherit Sprite", ref active.node.inheritSprite);
-
-                    var parent = tree.GetParentSprite(active.node);
-                    if (active.node.inheritSprite)
                     {
-                        GUI.enabled = false;
+                        PropertyLayout("Inherit Sprite", ref active.node.inheritSprite);
+
+                        var spriteParent = tree.GetParentSprite(active.node);
+                        if (active.node.inheritSprite)
                         {
-                            var parentName = parent < 0 ? "None" : tree[parent].title;
+                            GUI.enabled = false;
+                            {
+                                var parentName = spriteParent < 0 ? "None" : tree[spriteParent].title;
+
+                                EditorGUILayout.BeginHorizontal();
+                                EditorGUILayout.LabelField("Inherit", GUILayout.MaxWidth(columnWidth));
+                                EditorGUILayout.LabelField(parentName, GUILayout.MaxWidth(2f * columnWidth));
+                                EditorGUILayout.EndHorizontal();
+
+                                if (spriteParent != -1)
+                                {
+                                    PropertyLayout("Effective Sprite", ref tree[spriteParent].sprite);
+                                }
+                            }
+                            GUI.enabled = true;
+                        }
+                        else
+                        {
+                            PropertyLayout("Sprite", ref active.node.sprite);
+                            PropertyLayout("Z-Index", ref active.node.zindex);
 
                             EditorGUILayout.BeginHorizontal();
-                            EditorGUILayout.LabelField("Inheritance", GUILayout.MaxWidth(columnWidth));
-                            EditorGUILayout.LabelField(parentName, GUILayout.MaxWidth(2f * columnWidth));
+                            if (GUILayout.Button("Auto Z-Index"))
+                            {
+                                if (spriteParent < 0)
+                                {
+                                    active.node.zindex = 0;
+                                }
+                                else
+                                {
+                                    active.node.zindex = tree[spriteParent].zindex + 1;
+                                }
+                            }
                             EditorGUILayout.EndHorizontal();
-
-                            if (parent != -1)
-                            {
-                                PropertyLayout("Effective Sprite", ref tree[parent].sprite);
-                            }
                         }
-                        GUI.enabled = true;
                     }
-                    else
-                    {
-                        PropertyLayout("Sprite", ref active.node.sprite);
-                        PropertyLayout("Z-Index", ref active.node.zindex);
-
-                        EditorGUILayout.BeginHorizontal();
-                        if (GUILayout.Button("Auto Z-Index"))
-                        {
-                            if (parent < 0)
-                            {
-                                active.node.zindex = 0;
-                            }
-                            else
-                            {
-                                active.node.zindex = tree[parent].zindex + 1;
-                            }
-                        }
-                        EditorGUILayout.EndHorizontal();
-                    }
-
-                    EditorGUILayout.BeginHorizontal();
-                    PropertyLayout("Icon", ref active.node.icon);
-                    EditorGUILayout.EndHorizontal();
                 }
                 EditorGUILayout.EndVertical();
 
@@ -508,6 +520,68 @@ public class UpgradeTreeEditor : Editor
                     {
                         active.list.ApplyModifiedProperties();
                         active.node.modifiers = (List<Modifier>)Serializable.GetTargetObjectOfProperty(modifiers);
+                    }
+                }
+
+                {
+                    PropertyLayout("Inherit Projectile", ref active.node.inheritProjectile);
+
+                    var projectileParent = tree.GetParentProjectiles(active.node);
+                    if (active.node.inheritProjectile)
+                    {
+                        GUI.enabled = false;
+                        {
+                            var parentName = projectileParent < 0 ? "None" : tree[projectileParent].title;
+
+                            EditorGUILayout.BeginHorizontal();
+                            EditorGUILayout.LabelField("Inherit", GUILayout.MaxWidth(columnWidth));
+                            EditorGUILayout.LabelField(parentName, GUILayout.MaxWidth(2f * columnWidth));
+                            EditorGUILayout.EndHorizontal();
+
+                            if (projectileParent != -1)
+                            {
+                                if (sapso == null)
+                                {
+                                    sapso = CreateTemporaryAPSO();
+                                }
+                                SerializedProperty projectiles = sapso.FindProperty("projectiles");
+                                sapso.Update();
+                                Serializable.SetTargetObjectOfProperty(projectiles, tree[projectileParent].projectiles);
+                                PropertyLayout("Effective Projectiles", ref projectiles);
+                            }
+                        }
+                        GUI.enabled = true;
+                    }
+                    else
+                    {
+                        {
+                            SerializedProperty projectiles = active.projectiles.FindProperty("projectiles");
+                            active.projectiles.Update();
+                            Serializable.SetTargetObjectOfProperty(projectiles, active.node.projectiles);
+
+                            PropertyLayout("Projectiles", ref projectiles);
+
+                            if (active.projectiles.hasModifiedProperties)
+                            {
+                                active.projectiles.ApplyModifiedProperties();
+                                active.node.projectiles = (List<AttackProperties>)Serializable.GetTargetObjectOfProperty(projectiles);
+                            }
+                        }
+                        PropertyLayout("P-Index", ref active.node.pindex);
+
+                        EditorGUILayout.BeginHorizontal();
+                        if (GUILayout.Button("Auto P-Index"))
+                        {
+                            if (projectileParent < 0)
+                            {
+                                active.node.zindex = 0;
+                            }
+                            else
+                            {
+                                active.node.zindex = tree[projectileParent].zindex + 1;
+                            }
+                        }
+                        EditorGUILayout.EndHorizontal();
                     }
                 }
                 EditorGUILayout.EndVertical();

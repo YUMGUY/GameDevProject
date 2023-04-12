@@ -24,7 +24,7 @@ public class Upgrade
     }
 };
 
-public class TowerUpgrade : MonoBehaviour
+public class TurretUpgrade : MonoBehaviour
 {
     // Reference Upgrade Tree
     [SerializeField]
@@ -65,10 +65,10 @@ public class TowerUpgrade : MonoBehaviour
         }
 
         // Resolve effective sprite
-        var effectiveSprite = tree.GetEffectiveSprite(node);
-
-        if (effectiveSprite != null)
+        if (tree.GetEffectiveSprite(node) is Sprite effectiveSprite)
+        {
             gameObject.GetComponent<SpriteRenderer>().sprite = effectiveSprite;
+        }
 
         foreach (Modifier mod in node.modifiers)
         {
@@ -88,6 +88,31 @@ public class TowerUpgrade : MonoBehaviour
 
             Debug.Log($"[Upgrade] {node.title} Applying modifier {mod.stat} {mod.action} {mod.amount}. Updated value: {statusSystem.GetStat(mod.stat)}");
         }
+
+        if (gameObject.GetComponent<ProjectileSystem>() is ProjectileSystem projectileSystem)
+        {
+            // Clear all projectiles on turret and add effective projectiles
+            ref List<AttackProperties> projectiles = ref projectileSystem.projectiles;
+            projectiles.Clear();
+
+            foreach (AttackProperties p in tree.GetEffectiveProjectiles(node))
+            {
+                // Add projectile from effective projectiles on upgrade
+
+                projectiles.Add(p);
+
+                // FIXME: Find some way to implement damage on projectiles.
+                //// Create status effect for damaging health.
+                //// Value of this status effect is PROJECTILE_DAMAGE
+                //if (p.projectile.GetComponent<BaseProjectile>() is BaseProjectile projectile)
+                //{
+                //    // Add projectile damage here?
+                //}
+            }
+
+            projectileSystem.ResetSystem();
+        }
+
 
         return true;
     }
@@ -116,5 +141,12 @@ public class TowerUpgrade : MonoBehaviour
         tree.Init(upgradeTree);
 
         GetComponent<SpriteRenderer>().sprite = tree[0].sprite;
+
+
+        // Always buy basic upgrade on start to have correct properties applied.
+        if (tree[0].title == "Basic")
+        {
+            BuyUpgrade(0);
+        }
     }
 }

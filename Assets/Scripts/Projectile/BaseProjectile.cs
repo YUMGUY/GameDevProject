@@ -9,7 +9,7 @@ public class BaseProjectile : MonoBehaviour
     // Tags that the bullet will check collision with
     [SerializeField] List<string> targetTags; 
 
-    [SerializeField] List<BaseStatusEffect> effects;
+    [SerializeField] public List<BaseStatusEffect> effects;
 
     public UnityEvent onCollision;
 
@@ -82,12 +82,12 @@ public class BaseProjectile : MonoBehaviour
         if (!statSys)
             return;
 
-        foreach (BaseStatusEffect currEffect in effects)
+        foreach (BaseStatusEffect effect in effects)
         {
-            if (collision.gameObject == parent && !currEffect.isOwnerInflicting)
+            if (collision.gameObject == parent && !effect.isOwnerInflicting)
                 continue;
 
-            statSys.ApplyEffect(currEffect);
+            statSys.ApplyEffect(effect);
         }
     }
 
