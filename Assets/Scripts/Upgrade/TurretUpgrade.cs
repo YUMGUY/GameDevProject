@@ -59,7 +59,7 @@ public class TurretUpgrade : MonoBehaviour
         node.bought = true;
 
         // Remove power
-        if (!free && coreData.getEnergy() < node.cost)
+        if (!free && coreData.getEnergy() > node.cost)
         {
             coreData.removeEnergy((float)node.cost);
         }
