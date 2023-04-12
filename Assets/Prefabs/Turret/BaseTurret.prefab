@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locomotionSystem: {fileID: 4605530934032298004}
   projectileSystem: {fileID: 0}
+  orbSpawner: {fileID: 0}
   targetTags:
   - Enemy
 --- !u!114 &4605530934032298004
@@ -145,10 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736f3c63ebba1f947a958c2c202c25bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseSpeed: 0
   effectiveSpeed: 0
   maxSpeed: 0
   isDirectMovement: 0
-  rawSpeed: 0
 --- !u!114 &4605530934032298005
 MonoBehaviour:
   m_ObjectHideFlags: 0
