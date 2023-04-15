@@ -26,6 +26,12 @@ public class Alert : MonoBehaviour
     /// </summary>
     private bool isDisplayingAlert;
 
+    [Header("SFX")]
+    /// <summary>
+    /// The sound effect that plays when the alert is displayed.
+    /// </summary>
+    [SerializeField] private AudioSource alertAudio;
+
     [Header("Message Customization")]
     /// <summary>
     /// How long the notification will stay on the screen before being removed.
@@ -59,6 +65,7 @@ public class Alert : MonoBehaviour
             isDisplayingAlert = true;
             alertTextUI.text = alertMessage;
             alertAnimation.Play("DisplayAlert");
+            alertAudio.PlayOneShot(alertAudio.clip);
             StartCoroutine(WaitForAlertDuration());
         }
         else
