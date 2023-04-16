@@ -6,7 +6,12 @@ using TMPro;
 
 public class Alert : MonoBehaviour
 {
-    [Header("UI Elements")]  
+    [Header("UI Elements")]
+    /// <summary>
+    /// The UI element that holds the panel that will be displayed to the player.
+    /// </summary>
+    [SerializeField] private RawImage notificationAlertPanelUI;
+
     /// <summary>
     /// The UI element that holds the text that will be displayed to the player.
     /// </summary>
@@ -40,7 +45,7 @@ public class Alert : MonoBehaviour
 
     [Header("SFX")]
     /// <summary>
-    /// The sound effect that plays when the notification alert is displayed.
+    /// The audio source component that plays the notification alert sound.
     /// </summary>
     [SerializeField] private AudioSource notificationAlertAudio;
 
@@ -49,16 +54,12 @@ public class Alert : MonoBehaviour
     /// </summary>
     [SerializeField] private AudioSource bigWarningAlertAudio;
 
-    [Header("Message Customization")]
+    [Header("Scriptable Object")]
     /// <summary>
-    /// How long the notification will stay on the screen before being removed.
+    /// The scriptable object that contains all the customizable information
+    /// for the alert notification.
     /// </summary>
-    [SerializeField] float notificationAlertDuration;
-
-    /// <summary>
-    /// The message that will be displayed to the player.
-    /// </summary>
-    [SerializeField] [TextArea] private string notificationAlertMessage;
+    [SerializeField] private AlertScriptable alertNotification;
 
 
     void Update()
@@ -85,9 +86,11 @@ public class Alert : MonoBehaviour
         if(!isDisplayingNotificationAlert)
         {
             isDisplayingNotificationAlert = true;
-            notificationAlertTextUI.text = notificationAlertMessage;
+            notificationAlertPanelUI.color = alertNotification.panelColor;
+            notificationAlertTextUI.color = alertNotification.textColor;
+            notificationAlertTextUI.text = alertNotification.message;
             notificationAlertAnimation.Play("DisplayAlert");
-            notificationAlertAudio.PlayOneShot(notificationAlertAudio.clip);
+            notificationAlertAudio.PlayOneShot(alertNotification.alertSound);
             StartCoroutine(WaitForNotificationAlertDuration());
         }
     }
@@ -97,7 +100,7 @@ public class Alert : MonoBehaviour
     /// </summary>
     IEnumerator WaitForNotificationAlertDuration()
     {
-        yield return new WaitForSeconds(notificationAlertDuration);
+        yield return new WaitForSeconds(alertNotification.duration);
         RemoveNotificationAlert();
     }
 

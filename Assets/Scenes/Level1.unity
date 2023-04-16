@@ -3337,13 +3337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb89d5ef00b4a646a598b430e1f964e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notificationAlertPanelUI: {fileID: 650343569}
   notificationAlertTextUI: {fileID: 657416077}
   notificationAlertAnimation: {fileID: 650343568}
   bigWarningAlertAnimation: {fileID: 1018075563}
   notificationAlertAudio: {fileID: 1401437229}
   bigWarningAlertAudio: {fileID: 1018075566}
-  notificationAlertDuration: 4
-  notificationAlertMessage: Sup
+  alertNotification: {fileID: 11400000, guid: 16f170c2ec36c88479941bcfd13ea020, type: 2}
 --- !u!82 &1401437229
 AudioSource:
   m_ObjectHideFlags: 0
