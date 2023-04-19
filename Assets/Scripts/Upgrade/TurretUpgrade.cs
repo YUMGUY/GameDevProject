@@ -62,6 +62,7 @@ public class TurretUpgrade : MonoBehaviour
         if (!free && coreData.getEnergy() > node.cost)
         {
             coreData.removeEnergy((float)node.cost);
+            print(coreData.getEnergy() + "left");
         }
 
         // Resolve effective sprite
