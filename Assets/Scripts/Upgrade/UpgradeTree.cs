@@ -8,6 +8,9 @@ public class UpgradeTree : ScriptableObject
     [SerializeField]
     public List<UpgradeNode> tree;
 
+    [System.NonSerialized]
+    public UpgradeNode lastUpgrade = null;
+
     public int size { get { return tree.Count; } }
 
     public UpgradeTree Init(UpgradeTree other)
@@ -93,6 +96,9 @@ public class UpgradeTree : ScriptableObject
     {
         // FIXME: This is slow, IndexOf is O(n) and must check O(m) ancestors -> O(nm) ~ O(n^2) in worst case.
         var ancestors = GetAncestors(node, true);
+
+        if (lastUpgrade != null && !ancestors.Contains(IndexOf(lastUpgrade)))
+            return false;
 
         foreach (var a in ancestors)
         {

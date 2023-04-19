@@ -45,6 +45,8 @@ public class TurretUpgrade : MonoBehaviour
 
         UpgradeNode node = tree[idx];
 
+        tree.lastUpgrade = node;
+
         Debug.Log($"Buying: \"{node.title}\"");
 
         // Get StatusSystem component
