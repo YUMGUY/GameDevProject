@@ -54,7 +54,7 @@ public class RadialUiButton : MonoBehaviour
                     createdButton.transform.localPosition = new Vector3(xpos, ypos, 0);
 
                     // FIXME: Figure out how to scale the icons properly
-                    createdButton.transform.localScale = new Vector3(1f, 3.5f, 1f);
+                    createdButton.transform.localScale = new Vector3(1f, 1f, 1f);
                     UpgradeChoice button_Upgrade = createdButton.GetComponent<UpgradeChoice>();
                     button_Upgrade.chosenUpgrade = upgrades[i];
                     button_Upgrade.radialUIref = radialUi;
