@@ -34,8 +34,9 @@ MonoBehaviour:
       projectileSpawnDistance: 0
       fireRate: 0.5
       fireSpread: 0
+    animationController: {fileID: 0}
     modifiers: []
-    position: {x: 79, y: 144}
+    position: {x: 79, y: 143}
     zindex: 0
     pindex: 0
     inheritSprite: 0
@@ -60,6 +61,7 @@ MonoBehaviour:
       projectileSpawnDistance: 0
       fireRate: 0.4
       fireSpread: 0
+    animationController: {fileID: 0}
     modifiers: []
     position: {x: 352, y: 57}
     zindex: 1
@@ -86,6 +88,7 @@ MonoBehaviour:
       projectileSpawnDistance: 0
       fireRate: 0.3
       fireSpread: 0
+    animationController: {fileID: 0}
     modifiers: []
     position: {x: 600, y: 56}
     zindex: 0
@@ -102,6 +105,7 @@ MonoBehaviour:
     zone: {fileID: 0}
     inheritProjectile: 0
     projectiles: []
+    animationController: {fileID: 0}
     modifiers: []
     position: {x: 352, y: 204}
     zindex: 1
@@ -128,6 +132,7 @@ MonoBehaviour:
       projectileSpawnDistance: 0
       fireRate: 4
       fireSpread: 0
+    animationController: {fileID: 0}
     modifiers: []
     position: {x: 599, y: 204}
     zindex: 2
@@ -144,6 +149,7 @@ MonoBehaviour:
     zone: {fileID: 873852204895997393, guid: 58474205c8c236a4e92f12dcc6c2577a, type: 3}
     inheritProjectile: 1
     projectiles: []
+    animationController: {fileID: 0}
     modifiers: []
     position: {x: 344, y: 580}
     zindex: 1
@@ -160,6 +166,7 @@ MonoBehaviour:
     zone: {fileID: 0}
     inheritProjectile: 1
     projectiles: []
+    animationController: {fileID: 0}
     modifiers: []
     position: {x: 597, y: 579}
     zindex: 0
@@ -186,6 +193,7 @@ MonoBehaviour:
       projectileSpawnDistance: 0
       fireRate: 0.1
       fireSpread: 0
+    animationController: {fileID: 0}
     modifiers: []
     position: {x: 859, y: 56}
     zindex: 0
@@ -212,6 +220,7 @@ MonoBehaviour:
       projectileSpawnDistance: 16
       fireRate: 2
       fireSpread: 0
+    animationController: {fileID: 9100000, guid: 08001af16f266094190df22d09c634f2, type: 2}
     modifiers: []
     position: {x: 860, y: 205}
     zindex: 0
