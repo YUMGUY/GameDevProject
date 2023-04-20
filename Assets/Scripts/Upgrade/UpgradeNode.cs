@@ -120,5 +120,6 @@ public class UpgradeNode
         zindex = other.zindex;
         pindex = other.pindex;
         inheritSprite = other.inheritSprite;
+        animationController = other.animationController;
     }
 }
