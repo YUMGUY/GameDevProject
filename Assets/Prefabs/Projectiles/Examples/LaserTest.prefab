@@ -173,10 +173,9 @@ MonoBehaviour:
     projectileProperties:
       speed: 0
       scaleModifier: 2
-      lifeTime: 0.5
+      lifeTime: 1
       damage: 10
       dieOnCollision: 0
-      target: {fileID: 0}
     projectileSpawnDistance: 0
     fireRate: 0
     fireSpread: 0
