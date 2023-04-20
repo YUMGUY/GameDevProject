@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
 public class Upgrade
 {
     // Wrapper class for UpgradeNode with immutable members
@@ -70,6 +69,11 @@ public class TurretUpgrade : MonoBehaviour
         if (tree.GetEffectiveSprite(node) is Sprite effectiveSprite)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = effectiveSprite;
+        }
+
+        if (tree.GetEffectiveAnimator(node) is RuntimeAnimatorController controller)
+        {
+            gameObject.GetComponent<Animator>().runtimeAnimatorController = controller;
         }
 
         foreach (Modifier mod in node.modifiers)

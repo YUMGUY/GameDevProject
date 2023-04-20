@@ -217,6 +217,18 @@ public class UpgradeTree : ScriptableObject
 
     public Sprite GetEffectiveSprite(UpgradeNode node) => GetEffectiveSprite(IndexOf(node));
 
+    public RuntimeAnimatorController GetEffectiveAnimator(int node)
+    {
+        int parent = -1;
+
+        if (tree[node].inheritSprite)
+            parent = GetParentSprite(node);
+
+        return (parent == -1) ? tree[node].animationController : tree[parent].animationController;
+    }
+
+    public RuntimeAnimatorController GetEffectiveAnimator(UpgradeNode node) => GetEffectiveAnimator(IndexOf(node));
+
     public void RemoveCycles(int idx)
     {
         var ancestors = GetAncestors(idx, false);

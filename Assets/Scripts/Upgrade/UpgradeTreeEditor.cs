@@ -480,6 +480,7 @@ public class UpgradeTreeEditor : Editor
                                 if (spriteParent != -1)
                                 {
                                     PropertyLayout("Effective Sprite", ref tree[spriteParent].sprite);
+                                    PropertyLayout("Effective Animation", ref tree[spriteParent].animationController);
                                 }
                             }
                             GUI.enabled = true;
@@ -487,6 +488,13 @@ public class UpgradeTreeEditor : Editor
                         else
                         {
                             PropertyLayout("Sprite", ref active.node.sprite);
+                            // FIXME: AnimatorController does not implement IConvertible so we cannot use PropertyLayout<T
+                            //PropertyLayout("Animation", ref active.node.animationController);
+
+                            EditorGUILayout.BeginHorizontal(GUILayout.Width(3f * columnWidth));
+                            EditorGUILayout.LabelField("Animation", GUILayout.MaxWidth(columnWidth), GUILayout.Height(EditorGUIUtility.singleLineHeight));
+                            active.node.animationController = (RuntimeAnimatorController)EditorGUILayout.ObjectField(active.node.animationController, typeof(RuntimeAnimatorController), false, GUILayout.Height(EditorGUIUtility.singleLineHeight), GUILayout.MaxWidth(2f * columnWidth), GUILayout.Height(EditorGUIUtility.singleLineHeight));
+                            EditorGUILayout.EndHorizontal();
                             PropertyLayout("Z-Index", ref active.node.zindex);
 
                             EditorGUILayout.BeginHorizontal();
