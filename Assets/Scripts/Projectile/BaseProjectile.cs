@@ -56,7 +56,8 @@ public class BaseProjectile : MonoBehaviour
             Destroy(gameObject);
         }
 
-        transform.Translate(Time.deltaTime * properties.speed * direction);
+        Vector2 delta = Time.deltaTime * properties.speed * direction;
+        transform.position += new Vector3(delta.x, delta.y, 0.0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

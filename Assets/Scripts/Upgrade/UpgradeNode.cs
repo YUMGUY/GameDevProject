@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 public enum ModifierAction
 {
     ADD,
@@ -54,6 +53,7 @@ public class UpgradeNode
     public GameObject zone;
     public bool inheritProjectile;
     public List<AttackProperties> projectiles;
+    public RuntimeAnimatorController animationController;
 
     public List<Modifier> modifiers;
 
@@ -81,6 +81,7 @@ public class UpgradeNode
         zindex = 0;
         pindex = 0;
         inheritSprite = false;
+        animationController = null;
     }
 
     public UpgradeNode(UpgradeNode other)
@@ -119,5 +120,6 @@ public class UpgradeNode
         zindex = other.zindex;
         pindex = other.pindex;
         inheritSprite = other.inheritSprite;
+        animationController = other.animationController;
     }
 }

@@ -74,7 +74,7 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
         Vector2 front = (Vector2) transform.position + targetDir * projectileSpawnDistance;
 
         // Instantiate the projectile with provided params
-        GameObject projectile = Instantiate(projectileReference, front, Quaternion.identity);
+        GameObject projectile = Instantiate(projectileReference, front, transform.rotation);
 
         ProjectileProperties properties = projectileProperties;
         projectile.GetComponent<BaseProjectile>().Init(gameObject,
