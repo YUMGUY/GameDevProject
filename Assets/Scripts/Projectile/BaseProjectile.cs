@@ -23,6 +23,7 @@ public class BaseProjectile : MonoBehaviour
     private GameObject parent;
     private Vector2 direction;
     private ProjectileSystem projectileSysComponent;
+    private bool hasCollided = false;
     private void Start()
     {
         projectileSysComponent = GetComponent<ProjectileSystem>();
@@ -62,6 +63,7 @@ public class BaseProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (hasCollided == true) { return; }
         if (!checkCollisionTags(collision))
             return;
 
@@ -76,6 +78,7 @@ public class BaseProjectile : MonoBehaviour
         if (properties.dieOnCollision)
         {
             Destroy(gameObject);
+            hasCollided = true;
         }
 
         //collision.GetComponent<HealthComponent>().DamageStat(Stats.HEALTH, damage);
