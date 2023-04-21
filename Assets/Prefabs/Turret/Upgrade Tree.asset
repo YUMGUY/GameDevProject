@@ -214,10 +214,10 @@ MonoBehaviour:
       projectileProperties:
         speed: 0
         scaleModifier: 1
-        lifeTime: 1
+        lifeTime: 1.1
         damage: 0
         dieOnCollision: 0
-      projectileSpawnDistance: 16
+      projectileSpawnDistance: 0
       fireRate: 2
       fireSpread: 0
     animationController: {fileID: 9100000, guid: 08001af16f266094190df22d09c634f2, type: 2}
