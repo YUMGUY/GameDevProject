@@ -122,7 +122,7 @@ MonoBehaviour:
     zone: {fileID: 2262138801241056872, guid: 9c859c7d3b6e5a14e8632652db7f5cd8, type: 3}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 0}
+    - projectile: {fileID: 4967661330752684158, guid: 3fd2cd63a44cefd4caed90840fa088bf, type: 3}
       projectileProperties:
         speed: 0
         scaleModifier: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 599, y: 204}
+    position: {x: 599, y: 202}
     zindex: 2
     pindex: 0
     inheritSprite: 1

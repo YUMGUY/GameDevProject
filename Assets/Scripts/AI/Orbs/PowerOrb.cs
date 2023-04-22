@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class PowerOrb : MonoBehaviour
 {
+    public float energyValue;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,7 @@ public class PowerOrb : MonoBehaviour
                     if (playerCoreData != null)
                     {
                         // increments player's collected energy
-                        playerCoreData.addEnergy(1.0f);
+                        playerCoreData.addEnergy(energyValue);
                     }
                 }
                 DestroyObject();

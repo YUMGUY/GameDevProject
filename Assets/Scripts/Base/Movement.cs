@@ -21,9 +21,16 @@ public class Movement : MonoBehaviour
     private GameObject lineDest;
     private DottedLine dottedLine;
 
+    [Header("UI objects")]
+    public RadialUi radialMenuRef;
+    public GameObject upgradeScreen;
+
+
+
     void Update()
     {
-        if(selectMode)
+        // added condition when upgrade screen or radial menu isn't open
+        if(selectMode && !radialMenuRef.open && !upgradeScreen.activeInHierarchy)
         {
             if (mouseIsUp && Input.GetMouseButtonDown(0))
             {

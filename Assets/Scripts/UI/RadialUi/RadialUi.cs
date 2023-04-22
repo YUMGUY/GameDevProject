@@ -17,7 +17,7 @@ public class RadialUi : MonoBehaviour
     public GameObject selectedGameObject;
     public GameObject UpgradeScreenPanel;
     public GameObject upgradeButtonPrefab;
-    private bool open;
+    public bool open;
 
     private void Start()
     {
