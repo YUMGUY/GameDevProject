@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 96c5d4d2fc09387469115eee9fdec516
+guid: 7d1d9e615799ee2479d50bba97363bb2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bombshot-spritesheet_0
+      name: movementcursor-spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 259
-        width: 244
-        height: 259
+        y: 307
+        width: 320
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01a9bfe24214d7240ae44968ef2296c4
-      internalID: -755742710
+      spriteID: 1e57f49161952a74ca11970442467f5b
+      internalID: -936476717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bombshot-spritesheet_1
+      name: movementcursor-spritesheet_1
       rect:
         serializedVersion: 2
-        x: 244
-        y: 259
-        width: 244
-        height: 259
+        x: 320
+        y: 307
+        width: 320
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a274f1f142298c1468d64b42406d14e5
-      internalID: -274926036
+      spriteID: ec525821fe207524c80527d9e91a2336
+      internalID: -1236704469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bombshot-spritesheet_2
+      name: movementcursor-spritesheet_2
       rect:
         serializedVersion: 2
-        x: 488
-        y: 259
-        width: 244
-        height: 259
+        x: 640
+        y: 307
+        width: 320
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c227d3fabd2148a47af051f013fbf2e8
-      internalID: -1425205795
+      spriteID: 501bd7cfcbac0fe44a70c08ba0c3c7c9
+      internalID: 824806867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bombshot-spritesheet_3
+      name: movementcursor-spritesheet_3
       rect:
         serializedVersion: 2
-        x: 732
-        y: 259
-        width: 244
-        height: 259
+        x: 960
+        y: 307
+        width: 320
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7acfb173c78e40345b096933a641d042
-      internalID: -1961082756
+      spriteID: d697a203bd900564694c3f3b33095d6d
+      internalID: 478748991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bombshot-spritesheet_4
+      name: movementcursor-spritesheet_4
       rect:
         serializedVersion: 2
-        x: 976
-        y: 259
-        width: 244
-        height: 259
+        x: 1280
+        y: 307
+        width: 320
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50bef30e18cb88f4e977d5bb4422fae0
-      internalID: -352116734
+      spriteID: 12a2cccba9242f74187fd7a0ae50beb6
+      internalID: -1865061848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bombshot-spritesheet_5
+      name: movementcursor-spritesheet_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 244
-        height: 259
+        width: 320
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +236,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e6bff394a3627e4387a74a6d7e1416f
-      internalID: 151251882
+      spriteID: 22f5ddd359ba5e64db7cfbcfe63c3783
+      internalID: -2056930392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: movementcursor-spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13b1a4a3f2413146b4b34f6d2f578a2
+      internalID: -1327035149
       vertices: []
       indices: 
       edges: []
@@ -253,12 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bombshot-spritesheet_3: -1961082756
-      bombshot-spritesheet_4: -352116734
-      bombshot-spritesheet_2: -1425205795
-      bombshot-spritesheet_0: -755742710
-      bombshot-spritesheet_5: 151251882
-      bombshot-spritesheet_1: -274926036
+      movementcursor-spritesheet_2: 824806867
+      movementcursor-spritesheet_0: -936476717
+      movementcursor-spritesheet_4: -1865061848
+      movementcursor-spritesheet_6: -1327035149
+      movementcursor-spritesheet_3: 478748991
+      movementcursor-spritesheet_1: -1236704469
+      movementcursor-spritesheet_5: -2056930392
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

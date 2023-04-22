@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,9 +101,294 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bombburst-spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 424
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5052f24610670c408776d5765c6e834
+      internalID: -437725156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 424
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4758a0a30dfa00e41b2d2c85d9593a42
+      internalID: -1327780852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 424
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10613dd779ef9b4baee64cabb9daf8e
+      internalID: -854738695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 424
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6ed647558f6f649ba78dfe15812d82
+      internalID: -1745921095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 424
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94c0aeff795c5be4eaecff1925778253
+      internalID: 594549206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a629083a728294a93b8b8156bebcad
+      internalID: 1855071749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 212
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c500e85e5c8368746903d66afbb00ac1
+      internalID: 1180564568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 212
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32eacadb06b8e374aa5f380f0ea743dc
+      internalID: -1444723459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 212
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3422bd450d7ecff469411e01ab0f1169
+      internalID: 1541017859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 212
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddfdfb42130684740a5f06af97232d7f
+      internalID: 1476758481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01aa5fc99f8e4ab42866770d7f5277b8
+      internalID: 1471431516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 0
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e28be0f3c55bd74a92febcd4aff75c2
+      internalID: 1480237252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombburst-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 0
+        width: 313
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b2bed17d6a8384baf27aa8159295de
+      internalID: 2082888079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +399,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bombburst-spritesheet_8: 1541017859
+      bombburst-spritesheet_4: 594549206
+      bombburst-spritesheet_10: 1471431516
+      bombburst-spritesheet_1: -1327780852
+      bombburst-spritesheet_6: 1180564568
+      bombburst-spritesheet_11: 1480237252
+      bombburst-spritesheet_2: -854738695
+      bombburst-spritesheet_12: 2082888079
+      bombburst-spritesheet_9: 1476758481
+      bombburst-spritesheet_3: -1745921095
+      bombburst-spritesheet_5: 1855071749
+      bombburst-spritesheet_0: -437725156
+      bombburst-spritesheet_7: -1444723459
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
