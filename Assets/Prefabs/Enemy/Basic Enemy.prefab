@@ -220,9 +220,9 @@ MonoBehaviour:
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -1541882329994755046}
-        m_TargetAssemblyTypeName: HealthComponent, Assembly-CSharp
-        m_MethodName: testprint
+      - m_Target: {fileID: -183907319696788271}
+        m_TargetAssemblyTypeName: EnemyReaction, Assembly-CSharp
+        m_MethodName: Flash
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
