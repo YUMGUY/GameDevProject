@@ -9,6 +9,7 @@ public struct ProjectileProperties
     public float lifeTime;
     public float damage;
     public bool dieOnCollision;
+    public bool homing; // Follows target
 
     // Only used to pass down target information to projectiles
     // which spawn other projectiles
