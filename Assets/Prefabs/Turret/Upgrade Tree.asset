@@ -34,6 +34,7 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.5
+      angleOffset: 0
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
@@ -62,7 +63,8 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.4
-      fireSpread: 0
+      angleOffset: 0
+      fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
     position: {x: 352, y: 57}
@@ -90,7 +92,8 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.3
-      fireSpread: 0
+      angleOffset: 0
+      fireSpread: 10
     animationController: {fileID: 0}
     modifiers: []
     position: {x: 600, y: 56}
@@ -118,6 +121,7 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.5
+      angleOffset: 0
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
@@ -146,6 +150,7 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.5
+      angleOffset: 0
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
@@ -174,6 +179,7 @@ MonoBehaviour:
         homing: 1
       projectileSpawnDistance: 0
       fireRate: 1
+      angleOffset: 0
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
@@ -219,6 +225,7 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.1
+      angleOffset: 0
       fireSpread: 30
     animationController: {fileID: 0}
     modifiers: []
@@ -247,6 +254,7 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 2
+      angleOffset: 0
       fireSpread: 0
     animationController: {fileID: 9100000, guid: 08001af16f266094190df22d09c634f2, type: 2}
     modifiers: []
@@ -275,7 +283,8 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.4
-      fireSpread: 0
+      angleOffset: 0
+      fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
     position: {x: 601, y: 165}
@@ -303,10 +312,11 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.4
-      fireSpread: 0
+      angleOffset: 0
+      fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 855, y: 160}
+    position: {x: 855, y: 159}
     zindex: 0
     pindex: 0
     inheritSprite: 0
@@ -331,7 +341,8 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.4
-      fireSpread: 0
+      angleOffset: 0
+      fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
     position: {x: 603, y: 254}
@@ -359,7 +370,8 @@ MonoBehaviour:
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.4
-      fireSpread: 0
+      angleOffset: 0
+      fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
     position: {x: 857, y: 258}
