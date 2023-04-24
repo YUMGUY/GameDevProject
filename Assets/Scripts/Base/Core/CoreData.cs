@@ -43,6 +43,16 @@ public class CoreData : ScriptableObject
         {
             energyStored -= energy;
         }
+        else
+        {
+            energyStored = 0;
+        }
+        return energyStored;
+    }
+
+    public float setEnergy(float energy)
+    {
+        energyStored = Math.Min(energy, energyMax);
         return energyStored;
     }
 
