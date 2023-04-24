@@ -190,7 +190,8 @@ MonoBehaviour:
       homing: 0
     projectileSpawnDistance: 0.1
     fireRate: 3
-    fireSpread: 0
+    angleOffset: 45
+    fireSpread: 90
 --- !u!114 &481477862952636339
 MonoBehaviour:
   m_ObjectHideFlags: 0
