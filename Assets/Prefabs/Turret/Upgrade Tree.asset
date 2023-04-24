@@ -311,12 +311,36 @@ MonoBehaviour:
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 0.4
+      fireRate: 1
       angleOffset: 0
+      fireSpread: 5
+    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+      projectileProperties:
+        speed: 5
+        scaleModifier: 1
+        lifeTime: 5
+        damage: 0
+        dieOnCollision: 1
+        homing: 0
+      projectileSpawnDistance: 0
+      fireRate: 1
+      angleOffset: 45
+      fireSpread: 5
+    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+      projectileProperties:
+        speed: 5
+        scaleModifier: 1
+        lifeTime: 5
+        damage: 0
+        dieOnCollision: 1
+        homing: 0
+      projectileSpawnDistance: 0
+      fireRate: 1
+      angleOffset: -45
       fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 855, y: 159}
+    position: {x: 856, y: 159}
     zindex: 0
     pindex: 0
     inheritSprite: 0
@@ -369,8 +393,32 @@ MonoBehaviour:
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 0.4
+      fireRate: 1
       angleOffset: 0
+      fireSpread: 5
+    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+      projectileProperties:
+        speed: 5
+        scaleModifier: 1
+        lifeTime: 5
+        damage: 0
+        dieOnCollision: 1
+        homing: 0
+      projectileSpawnDistance: 0
+      fireRate: 1
+      angleOffset: 45
+      fireSpread: 5
+    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+      projectileProperties:
+        speed: 5
+        scaleModifier: 1
+        lifeTime: 5
+        damage: 0
+        dieOnCollision: 1
+        homing: 0
+      projectileSpawnDistance: 0
+      fireRate: 1
+      angleOffset: -45
       fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
