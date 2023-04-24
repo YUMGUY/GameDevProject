@@ -44,6 +44,9 @@ public class WaveUISystem : MonoBehaviour
     [SerializeField] Wave[] waveList;
     public GameObject playerLocation; // TO BE DELETED
 
+    // Seems that enemies start at order within sorting layer, so start here
+    private int layerOrderIndex = 3; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +96,15 @@ public class WaveUISystem : MonoBehaviour
                                                            currWaveGroup.angleEnd,
                                                            1.0f);
                     enemySpawned.transform.position = playerLocation.transform.position + spawnPos;
+
+                    // Edit the sprite renderer's order in layer attribute
+                    // so eney sprites do not overlap
+                    SpriteRenderer enemySprite = enemySpawned.GetComponent<SpriteRenderer>();
+                    if(enemySprite == null) { Debug.LogError("Enemy spawned has no sprite renderer!"); }
+
+                    enemySprite.sortingOrder = layerOrderIndex;
+                    ++layerOrderIndex;
+
                     yield return new WaitForSeconds(currWaveGroup.delayForEachSpawn);
                 }
             }
