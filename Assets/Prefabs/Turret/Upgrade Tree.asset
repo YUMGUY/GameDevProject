@@ -157,11 +157,21 @@ MonoBehaviour:
     exclusion: 
     bought: 0
     zone: {fileID: 873852204895997393, guid: 58474205c8c236a4e92f12dcc6c2577a, type: 3}
-    inheritProjectile: 1
-    projectiles: []
+    inheritProjectile: 0
+    projectiles:
+    - projectile: {fileID: 4967661330752684158, guid: fe8617836fdf6f2499bbb88e34f0c176, type: 3}
+      projectileProperties:
+        speed: 3
+        scaleModifier: 1
+        lifeTime: 6
+        damage: 0
+        dieOnCollision: 0
+      projectileSpawnDistance: 0
+      fireRate: 0.5
+      fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 344, y: 580}
+    position: {x: 402, y: 399}
     zindex: 1
     pindex: 0
     inheritSprite: 1
@@ -178,7 +188,7 @@ MonoBehaviour:
     projectiles: []
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 597, y: 579}
+    position: {x: 768, y: 396}
     zindex: 0
     pindex: 0
     inheritSprite: 1
@@ -193,7 +203,7 @@ MonoBehaviour:
     zone: {fileID: 0}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: 3fd2cd63a44cefd4caed90840fa088bf, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: 865451df98db262498e8323eb76b0a5b, type: 3}
       projectileProperties:
         speed: 10
         scaleModifier: 0.5

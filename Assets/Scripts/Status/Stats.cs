@@ -14,5 +14,6 @@ public enum Stats
     PROJECTILE_SCALE,
     PROJECTILE_SPEED,
     PROJECTILE_LIFETIME,
-    PROJECTILE_DAMAGE
+    PROJECTILE_DAMAGE,
+    ENERGY // Currently used for the core base's energy level
 };

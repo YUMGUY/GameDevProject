@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 142095877}
   - component: {fileID: 142095876}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Start Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7673cf78df3c09249aef4130999c4e95, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5a5af6d85aec7d4587602dad33bf5ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

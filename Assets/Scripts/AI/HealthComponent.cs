@@ -23,7 +23,7 @@ public class HealthComponent : MonoBehaviour, BaseAIComponent
     /// Changes health by the value specified amount.
     /// </summary>
     /// <param name="amount">Net amount to change health by. Negative changes cause damage. Positive changes cause healing.</param>
-    public void DamageStat(Stats statToDamage, float amount)
+    virtual public void DamageStat(Stats statToDamage, float amount)
     {
         switch (statToDamage)
         {
@@ -42,7 +42,7 @@ public class HealthComponent : MonoBehaviour, BaseAIComponent
         }
     }
 
-    public void SetStat(Stats statToDamage, float value)
+    virtual public void SetStat(Stats statToDamage, float value)
     {
         switch (statToDamage)
         {
@@ -61,14 +61,14 @@ public class HealthComponent : MonoBehaviour, BaseAIComponent
         }
     }
 
-    public List<float> GetStat(Stats stat)
+    virtual public List<float> GetStat(Stats stat)
     {
         if (stat != Stats.HEALTH)
             return null;
 
         return new List<float> { effectiveHealth };
     }
-    public void RegCompToStatSystem()
+    virtual public void RegCompToStatSystem()
     {
         gameObject.GetComponent<StatusSystem>().RegisterAIComponent(this, Stats.HEALTH);
     }
@@ -76,7 +76,7 @@ public class HealthComponent : MonoBehaviour, BaseAIComponent
     /// If healing occured the OnHeal event will be invoked.
     /// If health dropped below 0 OnDeath will be invoked.
     /// Otherwise if damage occured OnDamageTaken will be invoked.
-    private void invokeReponse(float amount)
+    protected void invokeReponse(float amount)
     {
         if (amount < 0)
         {

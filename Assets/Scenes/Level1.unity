@@ -383,6 +383,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3427060631853910638, guid: 087cd05e5fbd77e4abbe2ba7c1fcec79, type: 3}
   m_PrefabInstance: {fileID: 306723725}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &169599462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169599447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c240ec1ab5d70c54ea75b1bf1c746517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeEffects: []
+--- !u!114 &169599463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169599447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3cbb7e8400a894a974ee6e9a300e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  effectiveHealth: 0
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  coreDataRef: {fileID: 11400000, guid: 66b651cb5000d5b478f91d12dc7b758e, type: 2}
 --- !u!1 &176663278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2758106157743730770, guid: 1e02061b084c5e44eab895f001769a7c, type: 3}
