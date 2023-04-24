@@ -171,7 +171,7 @@ MonoBehaviour:
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 402, y: 399}
+    position: {x: 344, y: 472}
     zindex: 1
     pindex: 0
     inheritSprite: 1
@@ -188,7 +188,7 @@ MonoBehaviour:
     projectiles: []
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 768, y: 396}
+    position: {x: 601, y: 476}
     zindex: 0
     pindex: 0
     inheritSprite: 1
