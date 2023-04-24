@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -1541882329994755046}
   - component: {fileID: 7158643561890821168}
   - component: {fileID: 6496952407083755456}
+  - component: {fileID: -183907319696788271}
   m_Layer: 8
   m_Name: Basic Enemy
   m_TagString: Enemy
@@ -186,7 +187,6 @@ MonoBehaviour:
       lifeTime: 1
       damage: 10
       dieOnCollision: 0
-      target: {fileID: 0}
     projectileSpawnDistance: 0.1
     fireRate: 3
     fireSpread: 0
@@ -272,3 +272,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRef: {fileID: 0}
   doneSpawning: 0
+--- !u!114 &-183907319696788271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962644661464884768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14e922ef517f2a4f843306fc05e999e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: e9940509adb57444dabb5de743b43aad, type: 2}
+  duration: 0.1
