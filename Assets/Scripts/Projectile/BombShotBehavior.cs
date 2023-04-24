@@ -19,7 +19,12 @@ public class BombShotBehavior : MonoBehaviour
 
     public void CreateBombExplosion()
     {
+        print("explode");
         GameObject explosionEffect = Instantiate(explosion);
+        if(explosionEffect != null)
+        {
+            print("spawned");
+        }
         explosionEffect.transform.position = transform.position;
         explosionEffect.transform.rotation = Quaternion.identity;
     }

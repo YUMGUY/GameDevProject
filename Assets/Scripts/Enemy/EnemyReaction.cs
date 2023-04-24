@@ -59,13 +59,4 @@ public class EnemyReaction : MonoBehaviour
         // Set the routine to null, signaling that it's finished.
         flashRoutine = null;
     }
-
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(collision.CompareTag("Bullet"))
-    //    {
-    //        Flash();
-    //    }
-    //}
 }

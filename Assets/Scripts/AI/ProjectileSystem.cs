@@ -19,6 +19,7 @@ public class AttackProperties
     public ProjectileProperties projectileProperties;
     public float projectileSpawnDistance;
     public float fireRate; // in seconds
+    public float angleOffset; // in degrees
     public float fireSpread; // in degrees     
 }
 
@@ -73,6 +74,8 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
 
         // Get random angle of spread
         float enemyDistance = Vector2.Distance(transform.position, targetDir);
+
+        targetDir = targetDir + (Vector2)getAngleOffset(target, attackProp.angleOffset);
 
         // 1 gives a 1:1 in angles
         targetDir = targetDir + (Vector2)RandomPos(target, -attackProp.fireSpread, attackProp.fireSpread);
@@ -260,6 +263,22 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
     public void OnDestroy()
     {
         coroutines.ForEach(routine => StopCoroutine(routine));
+    }
+
+    public Vector3 getAngleOffset(GameObject target, float angle)
+    {
+        if (angle == 0) { return new Vector3(0, 0, 0); }
+
+        // Get angle between this object and targetPos
+        double angleBetween = Math.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * (180 / Math.PI);
+
+        //Debug.Log(transform.position);
+
+        float angleOffsetOut = ((float)angleBetween + angle) * Mathf.Deg2Rad;
+        float xPos = Mathf.Cos(angleOffsetOut);
+        float yPos = Mathf.Sin(angleOffsetOut);
+        Debug.Log(new Vector2(xPos, yPos));
+        return new Vector3(xPos, yPos, 0);
     }
 
     public Vector3 RandomPos(GameObject target, float angleBegin, float angleEnd)
