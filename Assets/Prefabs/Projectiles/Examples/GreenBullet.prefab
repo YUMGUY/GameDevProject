@@ -16,9 +16,8 @@ GameObject:
   - component: {fileID: 3019415976513176237}
   - component: {fileID: -2210693612578009972}
   - component: {fileID: 5066734864370870640}
-  - component: {fileID: -7699904832366036091}
   m_Layer: 8
-  m_Name: BombBlastBullet
+  m_Name: GreenBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -755742710, guid: 96c5d4d2fc09387469115eee9fdec516, type: 3}
+  m_Sprite: {fileID: -972223191, guid: 27ce92475455e4f43a18502620386341, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,9 +103,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.18}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.2
 --- !u!50 &4817145319344370506
 Rigidbody2D:
   serializedVersion: 4
@@ -146,19 +145,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 69ecf7b2096977d4a86a8ce9529e3f4b, type: 2}
   onCollision:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7699904832366036091}
-        m_TargetAssemblyTypeName: BombShotBehavior, Assembly-CSharp
-        m_MethodName: CreateBombExplosion
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &3019415976513176237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +182,7 @@ Animator:
   m_GameObject: {fileID: 4967661330752684158}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8d2a43a2cb6533d4284a5c0e26fd90b8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2ecd9ab754c145a41902432a3c7484c4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -205,16 +192,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &-7699904832366036091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4967661330752684158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5630eb1e0dbf8ed49899bacd7eaa717c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 4967661330752684158, guid: d700cb3ef601b844a931ed9afc072458, type: 3}

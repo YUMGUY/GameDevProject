@@ -24,6 +24,9 @@ public class BaseProjectile : MonoBehaviour
     private Vector2 direction;
     private ProjectileSystem projectileSysComponent;
     private bool hasCollided = false;
+
+    // FIXME FOR BOMB 
+    public bool isBomb;
     private void Start()
     {
         projectileSysComponent = GetComponent<ProjectileSystem>();
@@ -51,8 +54,8 @@ public class BaseProjectile : MonoBehaviour
     void Update()
     {
         properties.lifeTime -= Time.deltaTime;
-
-        if (properties.lifeTime <= 0)
+        
+        if (properties.lifeTime <= 0 && isBomb == false)
         {
             Destroy(gameObject);
         }

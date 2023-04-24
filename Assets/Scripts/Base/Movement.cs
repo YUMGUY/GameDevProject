@@ -73,6 +73,10 @@ public class Movement : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if(radialMenuRef.open == true)
+        {
+            return;
+        }
         mouseIsUp = false;
         selectMode = true;
 
