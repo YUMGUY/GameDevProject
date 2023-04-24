@@ -91,4 +91,8 @@ public class HealthComponent : MonoBehaviour, BaseAIComponent
             OnDamageTaken.Invoke(amount);
         }
     }
+    public void testprint()
+    {
+        print("hit");
+    }
 }

@@ -105,6 +105,7 @@ public class RadialUi : MonoBehaviour
 
     public void BuildingPhaseOn()
     {
+        print("stopped time");
         Time.timeScale = 0.0f;
     }
     public void BuildingPhaseOff()

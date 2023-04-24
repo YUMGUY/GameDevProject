@@ -24,7 +24,7 @@ MonoBehaviour:
     zone: {fileID: 0}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: 3fd2cd63a44cefd4caed90840fa088bf, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: b1b6506f20dce664d9c3e34890f3bbeb, type: 3}
       projectileProperties:
         speed: 5
         scaleModifier: 1
