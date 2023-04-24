@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float speed = 1.0f;
     [SerializeField] Map map;
     [SerializeField] Platform platform;
+    [SerializeField] GameObject movementIcon;
 
     private bool mouseIsUp = true;
     private bool selectMode = false;
@@ -25,16 +26,21 @@ public class Movement : MonoBehaviour
     public RadialUi radialMenuRef;
     public GameObject upgradeScreen;
 
-
+    private void Start()
+    {
+        movementIcon.GetComponent<Image>().enabled = false;
+    }
 
     void Update()
     {
         // added condition when upgrade screen or radial menu isn't open
         if(selectMode && !radialMenuRef.open && !upgradeScreen.activeInHierarchy)
         {
+            movementIcon.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 11.0f);
             if (mouseIsUp && Input.GetMouseButtonDown(0))
             {
                 selectMode = false;
+                movementIcon.GetComponent<Image>().enabled = false;
                 Vector3 dest = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 Tuple<float, float, float, float> borders = map.getBorders();
@@ -50,7 +56,7 @@ public class Movement : MonoBehaviour
 
                 destination = dest;
                 destination.Set(destination.x, destination.y, 0.0f); //Z must be set to 0 to prevent object from moving into the background
-                addLine(destination);
+                //addLine(destination);
                 moveMode = true;
             }
         }
@@ -69,6 +75,8 @@ public class Movement : MonoBehaviour
     {
         mouseIsUp = false;
         selectMode = true;
+
+        movementIcon.GetComponent<Image>().enabled = true;
     }
 
     private void OnMouseUp()
