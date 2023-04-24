@@ -65,7 +65,7 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
         }
     }
 
-    private void SpawnProjectile(GameObject projectileReference, ProjectileProperties projectileProperties, float projectileSpawnDistance)
+    private void SpawnProjectile(GameObject projectileReference, ProjectileProperties projectileProperties, float projectileSpawnDistance, float fireSpread)
     {
         Vector2 targetDir = (target.transform.position - transform.position).normalized;
 
@@ -110,7 +110,7 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
         {
             // if(eventTrigger == EventType.DISABLED) { break; }
             if (target)
-                SpawnProjectile(attack.projectile, attack.projectileProperties, attack.projectileSpawnDistance);
+                SpawnProjectile(attack.projectile, attack.projectileProperties, attack.projectileSpawnDistance, attack.fireSpread);
 
             yield return new WaitForSeconds(attack.fireRate);
         }
@@ -125,7 +125,7 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
                 continue;
 
             for (int i = 0; i < numberOfTimes; i++)
-                SpawnProjectile(projectile.projectile, projectile.projectileProperties, projectile.projectileSpawnDistance);
+                SpawnProjectile(projectile.projectile, projectile.projectileProperties, projectile.projectileSpawnDistance, projectile.fireSpread);
         }
     }
 

@@ -104,10 +104,20 @@ MonoBehaviour:
     bought: 0
     zone: {fileID: 0}
     inheritProjectile: 0
-    projectiles: []
+    projectiles:
+    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+      projectileProperties:
+        speed: 5
+        scaleModifier: 1
+        lifeTime: 5
+        damage: 0
+        dieOnCollision: 1
+      projectileSpawnDistance: 0
+      fireRate: 0.5
+      fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 352, y: 204}
+    position: {x: 343, y: 354}
     zindex: 1
     pindex: 0
     inheritSprite: 1
@@ -122,19 +132,19 @@ MonoBehaviour:
     zone: {fileID: 2262138801241056872, guid: 9c859c7d3b6e5a14e8632652db7f5cd8, type: 3}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: 3fd2cd63a44cefd4caed90840fa088bf, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: 38b36144b41b72e428f7b4f971aa2ee0, type: 3}
       projectileProperties:
-        speed: 0
-        scaleModifier: 0
-        lifeTime: 2
+        speed: 5
+        scaleModifier: 1
+        lifeTime: 5
         damage: 0
-        dieOnCollision: 0
+        dieOnCollision: 1
       projectileSpawnDistance: 0
-      fireRate: 4
+      fireRate: 0.5
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 599, y: 202}
+    position: {x: 605, y: 357}
     zindex: 2
     pindex: 0
     inheritSprite: 1
@@ -175,7 +185,7 @@ MonoBehaviour:
   - title: Rapid Fire Turret
     description: 
     sprite: {fileID: 21300000, guid: 31ec9181980cde34bb8c303e775f3354, type: 3}
-    icon: {fileID: 21300000, guid: 18f7b38895dc9b746819d93cafbdd5f1, type: 3}
+    icon: {fileID: 21300000, guid: 31ec9181980cde34bb8c303e775f3354, type: 3}
     cost: 0
     prerequisites: 02000000
     exclusion: 
@@ -202,7 +212,7 @@ MonoBehaviour:
   - title: Laser Turret
     description: 
     sprite: {fileID: 1079035540, guid: e63c11562e63b7e4897b491b0a2baf41, type: 3}
-    icon: {fileID: 21300000, guid: 97937b6242765cd469ba1a988fe3c03a, type: 3}
+    icon: {fileID: 1079035540, guid: e63c11562e63b7e4897b491b0a2baf41, type: 3}
     cost: 0
     prerequisites: 04000000
     exclusion: 
@@ -222,7 +232,115 @@ MonoBehaviour:
       fireSpread: 0
     animationController: {fileID: 9100000, guid: 08001af16f266094190df22d09c634f2, type: 2}
     modifiers: []
-    position: {x: 860, y: 205}
+    position: {x: 857, y: 356}
+    zindex: 0
+    pindex: 0
+    inheritSprite: 0
+  - title: Damage 1
+    description: 
+    sprite: {fileID: 0}
+    icon: {fileID: 21300000, guid: 97937b6242765cd469ba1a988fe3c03a, type: 3}
+    cost: 0
+    prerequisites: 01000000
+    exclusion: 
+    bought: 0
+    zone: {fileID: 0}
+    inheritProjectile: 0
+    projectiles:
+    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+      projectileProperties:
+        speed: 5
+        scaleModifier: 1
+        lifeTime: 5
+        damage: 0
+        dieOnCollision: 1
+      projectileSpawnDistance: 0
+      fireRate: 0.4
+      fireSpread: 0
+    animationController: {fileID: 0}
+    modifiers: []
+    position: {x: 601, y: 165}
+    zindex: 0
+    pindex: 0
+    inheritSprite: 1
+  - title: Spreader Turret
+    description: 
+    sprite: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
+    icon: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
+    cost: 0
+    prerequisites: 09000000
+    exclusion: 
+    bought: 0
+    zone: {fileID: 0}
+    inheritProjectile: 0
+    projectiles:
+    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+      projectileProperties:
+        speed: 5
+        scaleModifier: 1
+        lifeTime: 5
+        damage: 0
+        dieOnCollision: 1
+      projectileSpawnDistance: 0
+      fireRate: 0.4
+      fireSpread: 0
+    animationController: {fileID: 0}
+    modifiers: []
+    position: {x: 855, y: 160}
+    zindex: 0
+    pindex: 0
+    inheritSprite: 0
+  - title: Rapid Fire 1
+    description: 
+    sprite: {fileID: 0}
+    icon: {fileID: 21300000, guid: 18f7b38895dc9b746819d93cafbdd5f1, type: 3}
+    cost: 0
+    prerequisites: 03000000
+    exclusion: 
+    bought: 0
+    zone: {fileID: 0}
+    inheritProjectile: 0
+    projectiles:
+    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+      projectileProperties:
+        speed: 5
+        scaleModifier: 1
+        lifeTime: 5
+        damage: 0
+        dieOnCollision: 1
+      projectileSpawnDistance: 0
+      fireRate: 0.4
+      fireSpread: 0
+    animationController: {fileID: 0}
+    modifiers: []
+    position: {x: 603, y: 254}
+    zindex: 0
+    pindex: 0
+    inheritSprite: 1
+  - title: Spreader Turret
+    description: 
+    sprite: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
+    icon: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
+    cost: 0
+    prerequisites: 0b000000
+    exclusion: 
+    bought: 0
+    zone: {fileID: 0}
+    inheritProjectile: 0
+    projectiles:
+    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+      projectileProperties:
+        speed: 5
+        scaleModifier: 1
+        lifeTime: 5
+        damage: 0
+        dieOnCollision: 1
+      projectileSpawnDistance: 0
+      fireRate: 0.4
+      fireSpread: 0
+    animationController: {fileID: 0}
+    modifiers: []
+    position: {x: 857, y: 258}
     zindex: 0
     pindex: 0
     inheritSprite: 0
