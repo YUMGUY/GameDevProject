@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameOverScreen = endScreen.GetComponent<Image>();
+        if(Time.timeScale <= 0)
+        {
+            Time.timeScale = 1;
+        }
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(EndGame());
             coroutineStarted = true;
         }
+       // print(Time.timeScale);
     }
 
     public IEnumerator EndGame()
