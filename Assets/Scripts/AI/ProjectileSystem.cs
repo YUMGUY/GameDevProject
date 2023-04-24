@@ -65,9 +65,18 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
         }
     }
 
-    private void SpawnProjectile(GameObject projectileReference, ProjectileProperties projectileProperties, float projectileSpawnDistance, float fireSpread)
+    private void SpawnProjectile(AttackProperties attackProp, ProjectileProperties projectileProperties, float projectileSpawnDistance)
     {
+        GameObject projectileReference = attackProp.projectile;
+
         Vector2 targetDir = (target.transform.position - transform.position).normalized;
+
+        // Get random angle of spread
+        float enemyDistance = Vector2.Distance(transform.position, targetDir);
+
+        // 1 gives a 1:1 in angles
+        targetDir = targetDir + (Vector2)RandomPos(target, -attackProp.fireSpread, attackProp.fireSpread);
+
 
         // find front of enemy to instantiate bullet
         // Note: Vector3 cast into Vector2 implicitly drops z dimension, which is what we want here.
@@ -110,7 +119,7 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
         {
             // if(eventTrigger == EventType.DISABLED) { break; }
             if (target)
-                SpawnProjectile(attack.projectile, attack.projectileProperties, attack.projectileSpawnDistance, attack.fireSpread);
+                SpawnProjectile(attack, attack.projectileProperties, attack.projectileSpawnDistance);
 
             yield return new WaitForSeconds(attack.fireRate);
         }
@@ -125,7 +134,7 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
                 continue;
 
             for (int i = 0; i < numberOfTimes; i++)
-                SpawnProjectile(projectile.projectile, projectile.projectileProperties, projectile.projectileSpawnDistance, projectile.fireSpread);
+                SpawnProjectile(projectile, projectile.projectileProperties, projectile.projectileSpawnDistance);
         }
     }
 
@@ -251,5 +260,25 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
     public void OnDestroy()
     {
         coroutines.ForEach(routine => StopCoroutine(routine));
+    }
+
+    public Vector3 RandomPos(GameObject target, float angleBegin, float angleEnd)
+    {
+        if(angleBegin == 0) { return new Vector3(0, 0, 0); }
+
+        // Get angle between this object and targetPos
+        double angleBetween = Math.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * (180 / Math.PI);
+
+        //Debug.Log(transform.position);
+
+        float angleBeginRad = ((float)angleBetween + angleBegin) * Mathf.Deg2Rad;
+        float angleEndRad = ((float)angleBetween + angleEnd) * Mathf.Deg2Rad;
+
+        float randomAngle = UnityEngine.Random.Range(angleBeginRad, angleEndRad);
+        float xPos = Mathf.Cos(randomAngle);
+        float yPos = Mathf.Sin(randomAngle);
+
+        Debug.Log(new Vector2(xPos, yPos));
+        return new Vector3(xPos, yPos, 0);
     }
 }
