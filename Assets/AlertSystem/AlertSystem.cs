@@ -84,6 +84,7 @@ public class AlertSystem : MonoBehaviour
     /// <param name="alertData">Scriptable object containing customizable data for the alert</param>
     public void SendNotificationAlert(AlertScriptable alertData)
     {
+        print("invoked");
         notificationAlertEvent.Invoke(alertData);
     }
 

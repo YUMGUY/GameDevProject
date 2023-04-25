@@ -420,6 +420,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   coreDataRef: {fileID: 11400000, guid: 66b651cb5000d5b478f91d12dc7b758e, type: 2}
+--- !u!114 &169599470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169599447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5bc23a1ab8d6142924143f002a5c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - {fileID: 11400000, guid: ecaa016a3cb69f5479cca646231af14d, type: 2}
+  - {fileID: 11400000, guid: 007377d4e0a28094eb85889b555c41eb, type: 2}
+  - {fileID: 11400000, guid: 46e506554b71f6a4fa18aac42be30692, type: 2}
+  - {fileID: 11400000, guid: 1f02ce7d75c440a40b95074eff5446e7, type: 2}
+  - {fileID: 11400000, guid: b8e808b20dade88459c939915e1f2a86, type: 2}
+  alertSys: {fileID: 1401437228}
+  mapRef: {fileID: 343408502}
+  currentZone: 
 --- !u!1 &176663278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2758106157743730770, guid: 1e02061b084c5e44eab895f001769a7c, type: 3}
@@ -815,6 +836,10 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 343408502}
+    - target: {fileID: 3427060631853910635, guid: 087cd05e5fbd77e4abbe2ba7c1fcec79, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3427060631853910635, guid: 087cd05e5fbd77e4abbe2ba7c1fcec79, type: 3}
       propertyPath: platform
       value: 
@@ -7603,7 +7628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6715210267330762668, guid: 7b8d145e25abfdc42b035c8c8cfb5a2f, type: 3}
       propertyPath: waveList.Array.data[0].waveGroups.Array.data[0].enemiesInGroup.Array.data[0].numToSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6715210267330762668, guid: 7b8d145e25abfdc42b035c8c8cfb5a2f, type: 3}
       propertyPath: waveList.Array.data[0].waveGroups.Array.data[0].enemiesInGroup.Array.data[1].numToSpawn
