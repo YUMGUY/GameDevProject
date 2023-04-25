@@ -10,6 +10,7 @@ public class BuildDefense : MonoBehaviour
     [SerializeField] Platform platform;
     public GameObject objectSpawned;
     public GameObject defense;
+    [SerializeField] Map map;
 
     private Tower towerBase;
     public SpriteRenderer defenseSprite;
@@ -53,6 +54,7 @@ public class BuildDefense : MonoBehaviour
             defense.GetComponent<AI_Base>().enabled = false; //Turn off the AI while placing
 
             defenseSprite = defense.GetComponentInChildren<SpriteRenderer>();
+            defense.GetComponent<TurretUpgrade>().map = map;
             numberOfClicks = 0;
         }
     }

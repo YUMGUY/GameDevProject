@@ -6,7 +6,9 @@ public class EnemyOrbSystem : MonoBehaviour
 {
     // Start is called before the first frame update
     // only drop one orb
+    public Map map;
     private bool dropped = false;
+
     private void Start()
     {
         animController = GetComponent<Animator>();
@@ -19,6 +21,7 @@ public class EnemyOrbSystem : MonoBehaviour
         {
             GameObject drop = Instantiate(orb);
             drop.transform.position = transform.position;
+            drop.GetComponent<PowerOrb>().map = map;
 
             animController.SetTrigger("death");
             dropped = true;

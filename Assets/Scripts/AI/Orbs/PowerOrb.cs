@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -9,6 +7,7 @@ using UnityEngine;
 public class PowerOrb : MonoBehaviour
 {
     public float energyValue;
+    public Map map;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +42,8 @@ public class PowerOrb : MonoBehaviour
 
                     if (playerCoreData != null)
                     {
-                        // increments player's collected energy
-                        playerCoreData.addEnergy(energyValue);
+                        // increments player's collected energy, multiplied by zone modifier
+                        playerCoreData.addEnergy(energyValue * map.getCurrentZone().difficultyMultiplier);
                     }
                 }
                 DestroyObject();

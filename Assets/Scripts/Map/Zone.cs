@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Zone : MonoBehaviour
 {
-    [SerializeField] float difficultyMultiplier;
+    [SerializeField] public float difficultyMultiplier;
 
     public Tuple<float, float, float, float> getBorders()
     {

@@ -35,6 +35,8 @@ public class TurretUpgrade : MonoBehaviour
     // Private instance of upgrade tree
     private UpgradeTree tree = null;
 
+    public Map map;
+
     public bool BuyUpgrade(int idx, bool free=false) {
         if (tree == null)
         {
@@ -44,7 +46,12 @@ public class TurretUpgrade : MonoBehaviour
 
         UpgradeNode node = tree[idx];
 
-        tree.lastUpgrade = node;
+        // FIXME: Currently use a hack to see if prefab names are equal
+        if (node.zone != null && map.getCurrentZone().name != node.zone.name)
+        {
+            Debug.Log($"Failed to buy \"{node.title}\", incorrect zone");
+            return false;
+        }
 
         Debug.Log($"Buying: \"{node.title}\"");
 
@@ -55,6 +62,8 @@ public class TurretUpgrade : MonoBehaviour
             Debug.LogError("No status system found on tower game object.");
             return false;
         }
+
+        tree.lastUpgrade = node;
 
         // Set node as owned
         node.bought = true;
@@ -119,7 +128,6 @@ public class TurretUpgrade : MonoBehaviour
 
             projectileSystem.ResetSystem();
         }
-
 
         return true;
     }
