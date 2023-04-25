@@ -26,6 +26,10 @@ public class Movement : MonoBehaviour
     public RadialUi radialMenuRef;
     public GameObject upgradeScreen;
 
+    [Header("SFX")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip setMoveSFX;
+
     private void Start()
     {
         movementIcon.GetComponent<Image>().enabled = false;
@@ -57,6 +61,10 @@ public class Movement : MonoBehaviour
                 destination = dest;
                 destination.Set(destination.x, destination.y, 0.0f); //Z must be set to 0 to prevent object from moving into the background
                 addLine(destination);
+                if(setMoveSFX)
+                {
+                    audioSource?.PlayOneShot(setMoveSFX);
+                }
                 moveMode = true;
             }
         }
