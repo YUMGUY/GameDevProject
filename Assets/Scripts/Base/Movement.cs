@@ -73,13 +73,13 @@ public class Movement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(radialMenuRef.open == true)
+        if(radialMenuRef.open || upgradeScreen.activeInHierarchy)
         {
             return;
         }
+
         mouseIsUp = false;
         selectMode = true;
-
         movementIcon.GetComponent<Image>().enabled = true;
     }
 

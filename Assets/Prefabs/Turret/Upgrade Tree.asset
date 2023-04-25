@@ -158,12 +158,12 @@ MonoBehaviour:
     zindex: 2
     pindex: 0
     inheritSprite: 1
-  - title: Range 1
+  - title: Bomb Turret
     description: 
     sprite: {fileID: 21300000, guid: d0e182cbcc35418418be9525add619fd, type: 3}
-    icon: {fileID: 21300000, guid: 86274b40fd019084ca2b7acb61cb2f86, type: 3}
+    icon: {fileID: 21300000, guid: d0e182cbcc35418418be9525add619fd, type: 3}
     cost: 0
-    prerequisites: 00000000
+    prerequisites: 0d000000
     exclusion: 
     bought: 0
     zone: {fileID: 873852204895997393, guid: 58474205c8c236a4e92f12dcc6c2577a, type: 3}
@@ -171,7 +171,7 @@ MonoBehaviour:
     projectiles:
     - projectile: {fileID: 4967661330752684158, guid: fe8617836fdf6f2499bbb88e34f0c176, type: 3}
       projectileProperties:
-        speed: 3
+        speed: 2
         scaleModifier: 1
         lifeTime: 6
         damage: 0
@@ -183,27 +183,27 @@ MonoBehaviour:
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 341, y: 466}
-    zindex: 1
+    position: {x: 860, y: 462}
+    zindex: 0
     pindex: 0
     inheritSprite: 0
-  - title: Range 2
+  - title: Trash
     description: 
     sprite: {fileID: 0}
     icon: {fileID: 21300000, guid: 86274b40fd019084ca2b7acb61cb2f86, type: 3}
     cost: 0
-    prerequisites: 05000000
+    prerequisites: 
     exclusion: 
     bought: 0
     zone: {fileID: 0}
-    inheritProjectile: 1
+    inheritProjectile: 0
     projectiles: []
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 636, y: 473}
+    position: {x: 1189, y: 454}
     zindex: 0
     pindex: 0
-    inheritSprite: 1
+    inheritSprite: 0
   - title: Rapid Fire Turret
     description: 
     sprite: {fileID: 21300000, guid: 31ec9181980cde34bb8c303e775f3354, type: 3}
@@ -426,3 +426,32 @@ MonoBehaviour:
     zindex: 0
     pindex: 0
     inheritSprite: 0
+  - title: Homing
+    description: 
+    sprite: {fileID: 0}
+    icon: {fileID: 0}
+    cost: 0
+    prerequisites: 03000000
+    exclusion: 
+    bought: 0
+    zone: {fileID: 0}
+    inheritProjectile: 0
+    projectiles:
+    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+      projectileProperties:
+        speed: 3
+        scaleModifier: 2
+        lifeTime: 5
+        damage: 0
+        dieOnCollision: 1
+        homing: 1
+      projectileSpawnDistance: 0
+      fireRate: 0.5
+      angleOffset: 0
+      fireSpread: 10
+    animationController: {fileID: 0}
+    modifiers: []
+    position: {x: 602, y: 463}
+    zindex: 0
+    pindex: 0
+    inheritSprite: 1

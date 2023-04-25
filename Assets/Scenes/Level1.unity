@@ -4522,6 +4522,10 @@ PrefabInstance:
       propertyPath: objectSpawned
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9064391136446532731, guid: 7b4f981815cd9a94199dd29bb5d81572, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 68b1510ca961f4243a7d7602a72f3924, type: 3}
     - target: {fileID: 9064391136490915688, guid: 7b4f981815cd9a94199dd29bb5d81572, type: 3}
       propertyPath: coreData
       value: 
@@ -4534,6 +4538,10 @@ PrefabInstance:
       propertyPath: radialUi
       value: 
       objectReference: {fileID: 1347792891}
+    - target: {fileID: 9064391136490915694, guid: 7b4f981815cd9a94199dd29bb5d81572, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d0fbb599188e374789f419f897c7215, type: 3}
     - target: {fileID: 9064391136562201218, guid: 7b4f981815cd9a94199dd29bb5d81572, type: 3}
       propertyPath: m_Name
       value: RadialUi
@@ -4674,6 +4682,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 9064391136583620759, guid: 7b4f981815cd9a94199dd29bb5d81572, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 38c7e0dd856312844adbfaf8c08ff0a9, type: 3}
+    - target: {fileID: 9064391137879273490, guid: 7b4f981815cd9a94199dd29bb5d81572, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fae5967787c701b4da41aecfa868c693, type: 3}
     - target: {fileID: 9064391137879273491, guid: 7b4f981815cd9a94199dd29bb5d81572, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
