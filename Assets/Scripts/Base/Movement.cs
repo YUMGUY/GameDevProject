@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
 
                 destination = dest;
                 destination.Set(destination.x, destination.y, 0.0f); //Z must be set to 0 to prevent object from moving into the background
-                //addLine(destination);
+                addLine(destination);
                 moveMode = true;
             }
         }
