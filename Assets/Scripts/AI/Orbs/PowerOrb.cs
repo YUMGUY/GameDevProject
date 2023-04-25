@@ -9,6 +9,10 @@ using UnityEngine;
 public class PowerOrb : MonoBehaviour
 {
     public float energyValue;
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip collectOrbSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +48,10 @@ public class PowerOrb : MonoBehaviour
                     if (playerCoreData != null)
                     {
                         // increments player's collected energy
+                        if (collectOrbSFX != null)
+                        {
+                            AudioSource.PlayClipAtPoint(collectOrbSFX, transform.position);
+                        }
                         playerCoreData.addEnergy(energyValue);
                     }
                 }
