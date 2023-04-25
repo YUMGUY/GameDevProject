@@ -121,6 +121,7 @@ MonoBehaviour:
   coreData: {fileID: 11400000, guid: 66b651cb5000d5b478f91d12dc7b758e, type: 2}
   audioSource: {fileID: 6309257677270246062}
   buyUpgradeSFX: {fileID: 8300000, guid: 3efef46a4392eba4caea166beb6147cb, type: 3}
+  trashTurretSFX: {fileID: 8300000, guid: 33bd0ed6d3980774e96125c048b4f8fe, type: 3}
 --- !u!114 &4605530934032298007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +224,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3efef46a4392eba4caea166beb6147cb, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

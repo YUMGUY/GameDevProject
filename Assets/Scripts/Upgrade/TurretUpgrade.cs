@@ -32,7 +32,7 @@ public class TurretUpgrade : MonoBehaviour
     [SerializeField]
     private CoreData coreData;
 
-    // plays the sound effects
+    // component that plays the sound effects
     [SerializeField]
     private AudioSource audioSource;
 

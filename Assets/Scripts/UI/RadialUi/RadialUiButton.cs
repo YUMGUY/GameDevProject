@@ -12,6 +12,10 @@ public class RadialUiButton : MonoBehaviour
     [SerializeField] RadialUi radialUi;
     [SerializeField] CoreData coreData;
 
+    [Header("SFX")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip trashTurretSFX;
+
     public bool coreClicked = false;
     public Tuple<Vector2, int, int> snap;
 
@@ -76,6 +80,10 @@ public class RadialUiButton : MonoBehaviour
             if(snap != null && platform.towerExists(snap.Item2, snap.Item3))
             {
                 GameObject tower = platform.delete(snap.Item2, snap.Item3);
+                if(trashTurretSFX != null)
+                {
+                    audioSource?.PlayOneShot(trashTurretSFX);
+                }
                 Destroy(tower);
             }
         }
