@@ -44,6 +44,8 @@ public class RadialUi : MonoBehaviour
         
         if (Input.GetMouseButtonDown(1))
         {
+            if(UpgradeScreenPanel.activeSelf) { return; }
+
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Tuple<Vector2, int, int> snap = platform.getSnap(mousePos);
  
