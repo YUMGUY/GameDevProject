@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class RadialUi : MonoBehaviour
 {
@@ -31,17 +32,29 @@ public class RadialUi : MonoBehaviour
         open = false;
     }
 
+    private void DestroyUI()
+    {
+        setAlpha(0.0f);
+        Destroy(uiWorldPos);
+        open = false;
+        BuildingPhaseOff();
+    }
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && open)
+        if (uiWorldPos)
         {
-            setAlpha(0.0f);
-            Destroy(uiWorldPos);
-            open = false;
-            BuildingPhaseOff();
+            gameObject.transform.position = Camera.main.WorldToScreenPoint(uiWorldPos.transform.position);
         }
-      
-        
+
+
+        if (open && ((EventSystem.current.IsPointerOverGameObject() && Input.GetMouseButtonDown(0)) || Input.GetMouseButtonDown(1)))
+        {
+            DestroyUI();
+            return;
+        }
+
+
         if (Input.GetMouseButtonDown(1))
         {
             if(UpgradeScreenPanel.activeSelf) { return; }
@@ -81,11 +94,6 @@ public class RadialUi : MonoBehaviour
             setAlpha(1.0f);
             open = true;
             BuildingPhaseOn();
-        }
-
-        if(uiWorldPos)
-        {
-            gameObject.transform.position = Camera.main.WorldToScreenPoint(uiWorldPos.transform.position);
         }
     }
 

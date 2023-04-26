@@ -8,6 +8,8 @@ public class PowerOrb : MonoBehaviour
 {
     public float energyValue;
     public Map map;
+
+    [SerializeField] private AudioClip collectOrbSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,10 @@ public class PowerOrb : MonoBehaviour
                     {
                         // increments player's collected energy, multiplied by zone modifier
                         playerCoreData.addEnergy(energyValue * map.getCurrentZone().difficultyMultiplier);
+                        if(collectOrbSFX != null)
+                        {
+                            AudioSource.PlayClipAtPoint(collectOrbSFX, transform.position);
+                        }
                     }
                 }
                 DestroyObject();
