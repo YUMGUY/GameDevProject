@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
         gameManager = GameObject.FindObjectOfType<GameManager>().endScreen;
         if (gameManager == null) { Debug.LogError("Unable to find the gameManger within the scene"); return; }
 
-        pauseOverlay = GameObject.Find("Main UI Window").transform.Find("PauseOverlay").gameObject;
+        pauseOverlay = GameObject.Find("Main UI Window").transform.Find("PauseOverlay").GetComponent<PauseMenu>().pauseMenuUI;
         if (gameManager == null) { Debug.LogError("Unable to find the gameManger within the scene"); return; }
 
         movementIcon.GetComponent<Image>().enabled = false;
