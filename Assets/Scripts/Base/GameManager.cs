@@ -45,10 +45,12 @@ public class GameManager : MonoBehaviour
         endScreen.SetActive(true);
         if(wonGame)
         {
+            Time.timeScale = 0;
             gameOverScreen.sprite = win;
         }
         else
         {
+            Time.timeScale = 0;
             gameOverScreen.sprite = lose;
         }
 

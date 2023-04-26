@@ -18,6 +18,8 @@ public class Movement : MonoBehaviour
     private bool selectMode = true;
     private bool moveMode = false;
     private Vector3 destination;
+    private GameObject gameManager;
+    private GameObject pauseOverlay;
 
     private GameObject lineDest;
     private DottedLine dottedLine;
@@ -32,6 +34,12 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameObject.FindObjectOfType<GameManager>().endScreen;
+        if (gameManager == null) { Debug.LogError("Unable to find the gameManger within the scene"); return; }
+
+        pauseOverlay = GameObject.Find("Main UI Window").transform.Find("PauseOverlay").gameObject;
+        if (gameManager == null) { Debug.LogError("Unable to find the gameManger within the scene"); return; }
+
         movementIcon.GetComponent<Image>().enabled = false;
     }
 
@@ -46,6 +54,9 @@ public class Movement : MonoBehaviour
             buildButtonRef.justSpawned = false;
             return;
         }
+
+        // Game is in the pause or win/lose menu
+        if(gameManager.activeSelf || pauseOverlay.activeSelf) { return; }
 
         // added condition when upgrade screen or radial menu isn't open
         if(selectMode && !radialMenuRef.open && !upgradeScreen.activeInHierarchy)
