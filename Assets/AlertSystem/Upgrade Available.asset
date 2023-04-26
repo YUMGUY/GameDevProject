@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Upgrade Available
   m_EditorClassIdentifier: 
   panelColor: {r: 0, g: 0.22723198, b: 1, a: 1}
-  alertSound: {fileID: 8300000, guid: 26854b1ca8c8a2d4a903f38845c81e87, type: 3}
+  alertSound: {fileID: 8300000, guid: 9b98e38fcad10a94ca6fa9b910fad05d, type: 3}
   duration: 4
   textColor: {r: 1, g: 1, b: 1, a: 1}
   message: Upgrade Available!
