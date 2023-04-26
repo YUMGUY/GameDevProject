@@ -154,6 +154,8 @@ public class TurretUpgrade : MonoBehaviour
         return true;
     }
 
+    public void RefundBasic() => coreData.addEnergy((float) tree[0].cost);
+
     public void BuyUpgrade(Upgrade upgrade) => BuyUpgrade(upgrade.index);
 
     public List<Upgrade> GetBuyableUpgrades(bool checkPower = false)
@@ -171,7 +173,7 @@ public class TurretUpgrade : MonoBehaviour
         return buyable;
     }
 
-    void Start()
+    void Awake()
     {
         // Hydrate new instance of UpgradeTree with existing upgrade tree
         tree = ScriptableObject.CreateInstance<UpgradeTree>();
@@ -179,11 +181,13 @@ public class TurretUpgrade : MonoBehaviour
 
         GetComponent<SpriteRenderer>().sprite = tree[0].sprite;
 
-
         // Always buy basic upgrade on start to have correct properties applied.
         if (tree[0].title == "Basic")
         {
-            BuyUpgrade(0);
+            var bought = BuyUpgrade(0);
+
+            if (!bought)
+                gameObject.SetActive(false);
         }
     }
 }
