@@ -10,6 +10,7 @@ public class CoreData : ScriptableObject
     [SerializeField] private float startingEnergyStored = 0.0f;
     [SerializeField] private float energyMax = 50.0f;
     [SerializeField] private int maxLevel = 2;
+    [SerializeField] List<int> levelUpCost;
     [SerializeField] private float energyStored;
 
     [SerializeField] private int startingCoreLevel = 0;
@@ -19,6 +20,11 @@ public class CoreData : ScriptableObject
     {
         energyStored = startingEnergyStored;
         coreLevel = startingCoreLevel;
+    }
+
+    public int getLevelUpCost(int level)
+    {
+        return levelUpCost[level];
     }
 
     public float getEnergy()

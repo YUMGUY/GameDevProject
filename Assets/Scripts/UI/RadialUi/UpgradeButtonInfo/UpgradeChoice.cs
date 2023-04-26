@@ -16,6 +16,8 @@ public class UpgradeChoice : MonoBehaviour
         {
             //transform.GetComponentInChildren<TextMeshProUGUI>().text = "";
             gameObject.GetComponent<Image>().sprite = chosenUpgrade.icon;
+
+            // FIXME: use GetChildrenComponent not explicit stuff like this...
             transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = chosenUpgrade.title;
             transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost: " + chosenUpgrade.cost.ToString();
         }

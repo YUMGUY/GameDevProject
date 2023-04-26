@@ -15,5 +15,6 @@ MonoBehaviour:
   startingEnergyStored: 10
   energyMax: 300
   maxLevel: 2
+  levelUpCost: 0100000032000000
   energyStored: 10
   startingCoreLevel: 0

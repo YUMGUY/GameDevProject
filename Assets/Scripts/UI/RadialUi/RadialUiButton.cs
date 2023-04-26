@@ -34,7 +34,14 @@ public class RadialUiButton : MonoBehaviour
         {
             if (coreClicked)
             {
-                coreData.levelUp();
+                Debug.Log("Checking cost...");
+                // Check if we have enough energy to cover the cost
+                int levelUpCost = coreData.getLevelUpCost(coreData.getLevel());
+                if(levelUpCost < coreData.getEnergy())
+                {
+                    coreData.removeEnergy(levelUpCost);
+                    coreData.levelUp();
+                }
             }
             else
             {
