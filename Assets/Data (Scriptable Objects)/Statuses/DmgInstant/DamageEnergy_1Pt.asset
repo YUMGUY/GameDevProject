@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d6fa4bb8897234db8d37f6c765972c, type: 3}
-  m_Name: CoreData
+  m_Script: {fileID: 11500000, guid: fdeae6486e4b7e44ca4b5568c00b700d, type: 3}
+  m_Name: DamageEnergy_1Pt
   m_EditorClassIdentifier: 
-  startingEnergyStored: 15
-  energyMax: 500
-  maxLevel: 2
-  energyStored: 0
-  startingCoreLevel: 0
+  statToEffect: 10
+  isStackable: 0
+  isPercentageBased: 0
+  isOwnerInflicting: 0
+  propagateToChildren: 0
+  amount: 1

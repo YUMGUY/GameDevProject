@@ -17,7 +17,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: 0c9dd4099e84dd649907b34f92242208, type: 3}
     icon: {fileID: 0}
-    cost: 0
+    cost: 3
     prerequisites: 
     exclusion: 
     bought: 1
@@ -46,7 +46,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: 0c9dd4099e84dd649907b34f92242208, type: 3}
     icon: {fileID: 21300000, guid: 18f7b38895dc9b746819d93cafbdd5f1, type: 3}
-    cost: 0
+    cost: 5
     prerequisites: 00000000
     exclusion: 
     bought: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 0}
     icon: {fileID: 21300000, guid: 18f7b38895dc9b746819d93cafbdd5f1, type: 3}
-    cost: 0
+    cost: 50
     prerequisites: 01000000
     exclusion: 
     bought: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: 0c9dd4099e84dd649907b34f92242208, type: 3}
     icon: {fileID: 21300000, guid: 97937b6242765cd469ba1a988fe3c03a, type: 3}
-    cost: 0
+    cost: 5
     prerequisites: 00000000
     exclusion: 
     bought: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 0}
     icon: {fileID: 21300000, guid: 97937b6242765cd469ba1a988fe3c03a, type: 3}
-    cost: 0
+    cost: 30
     prerequisites: 03000000
     exclusion: 
     bought: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: d0e182cbcc35418418be9525add619fd, type: 3}
     icon: {fileID: 21300000, guid: d0e182cbcc35418418be9525add619fd, type: 3}
-    cost: 0
+    cost: 100
     prerequisites: 0d000000
     exclusion: 
     bought: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: 31ec9181980cde34bb8c303e775f3354, type: 3}
     icon: {fileID: 21300000, guid: 31ec9181980cde34bb8c303e775f3354, type: 3}
-    cost: 0
+    cost: 100
     prerequisites: 02000000
     exclusion: 
     bought: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 1079035540, guid: e63c11562e63b7e4897b491b0a2baf41, type: 3}
     icon: {fileID: 1079035540, guid: e63c11562e63b7e4897b491b0a2baf41, type: 3}
-    cost: 0
+    cost: 100
     prerequisites: 04000000
     exclusion: 
     bought: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 0}
     icon: {fileID: 21300000, guid: 97937b6242765cd469ba1a988fe3c03a, type: 3}
-    cost: 0
+    cost: 5
     prerequisites: 01000000
     exclusion: 
     bought: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
     icon: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
-    cost: 0
+    cost: 100
     prerequisites: 09000000
     exclusion: 
     bought: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 0}
     icon: {fileID: 21300000, guid: 18f7b38895dc9b746819d93cafbdd5f1, type: 3}
-    cost: 0
+    cost: 5
     prerequisites: 03000000
     exclusion: 
     bought: 0
@@ -377,7 +377,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
     icon: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
-    cost: 0
+    cost: 100
     prerequisites: 0b000000
     exclusion: 
     bought: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 0}
     icon: {fileID: 0}
-    cost: 0
+    cost: 25
     prerequisites: 03000000
     exclusion: 
     bought: 0

@@ -17,6 +17,7 @@ public class UpgradeChoice : MonoBehaviour
             //transform.GetComponentInChildren<TextMeshProUGUI>().text = "";
             gameObject.GetComponent<Image>().sprite = chosenUpgrade.icon;
             transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = chosenUpgrade.title;
+            transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost: " + chosenUpgrade.cost.ToString();
         }
        
     }
@@ -39,13 +40,13 @@ public class UpgradeChoice : MonoBehaviour
         }
         List<Upgrade> newUpgrades = radialUIref.selectedGameObject.GetComponent<TurretUpgrade>().GetBuyableUpgrades();
         // FIXME: code better positioning of choices
-        float ypos = 225f;
+        float ypos = 325f;
         float xpos = 0;
         for (int i = 0; i < newUpgrades.Count; ++i)
         {
-            if (ypos <= -225f)
+            if (ypos <= -325f)
             {
-                ypos = 150f;
+                ypos = 325f;
                 xpos += 100;
             }
             // instantiate upgrade choice buttons prefab
@@ -57,7 +58,7 @@ public class UpgradeChoice : MonoBehaviour
             UpgradeChoice button_Upgrade = createdButton.GetComponent<UpgradeChoice>();
             button_Upgrade.chosenUpgrade = newUpgrades[i];
             button_Upgrade.radialUIref = radialUIref;
-            ypos -= 125f;
+            ypos -= 200f;
         }
     }
 }
