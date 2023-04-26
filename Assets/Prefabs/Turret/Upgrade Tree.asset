@@ -96,7 +96,7 @@ MonoBehaviour:
       fireSpread: 10
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 600, y: 50}
+    position: {x: 600, y: 49}
     zindex: 0
     pindex: 0
     inheritSprite: 1
@@ -306,9 +306,9 @@ MonoBehaviour:
       projectileProperties:
         speed: 6
         scaleModifier: 1
-        lifeTime: 6
+        lifeTime: 7
         damage: 0
-        dieOnCollision: 1
+        dieOnCollision: 0
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.6
@@ -318,9 +318,9 @@ MonoBehaviour:
       projectileProperties:
         speed: 6
         scaleModifier: 1
-        lifeTime: 6
+        lifeTime: 7
         damage: 0
-        dieOnCollision: 1
+        dieOnCollision: 0
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.6
@@ -330,9 +330,9 @@ MonoBehaviour:
       projectileProperties:
         speed: 6
         scaleModifier: 1
-        lifeTime: 6
+        lifeTime: 7
         damage: 0
-        dieOnCollision: 1
+        dieOnCollision: 0
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.6
@@ -340,7 +340,7 @@ MonoBehaviour:
       fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 856, y: 156}
+    position: {x: 855, y: 155}
     zindex: 0
     pindex: 0
     inheritSprite: 0
@@ -388,9 +388,9 @@ MonoBehaviour:
       projectileProperties:
         speed: 6
         scaleModifier: 1
-        lifeTime: 6
+        lifeTime: 7
         damage: 0
-        dieOnCollision: 1
+        dieOnCollision: 0
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.6
@@ -400,9 +400,9 @@ MonoBehaviour:
       projectileProperties:
         speed: 6
         scaleModifier: 1
-        lifeTime: 6
+        lifeTime: 7
         damage: 0
-        dieOnCollision: 1
+        dieOnCollision: 0
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.6
@@ -412,9 +412,9 @@ MonoBehaviour:
       projectileProperties:
         speed: 6
         scaleModifier: 1
-        lifeTime: 6
+        lifeTime: 7
         damage: 0
-        dieOnCollision: 1
+        dieOnCollision: 0
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.6
