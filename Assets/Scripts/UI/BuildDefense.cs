@@ -44,6 +44,7 @@ public class BuildDefense : MonoBehaviour
         } else if (Input.GetMouseButton(1))
         {
             spawning = false;
+            defense.GetComponent<TurretUpgrade>().RefundBasic();
             Destroy(defense);
         }
     }

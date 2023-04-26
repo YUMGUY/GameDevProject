@@ -154,6 +154,8 @@ public class TurretUpgrade : MonoBehaviour
         return true;
     }
 
+    public void RefundBasic() => coreData.addEnergy((float) tree[0].cost);
+
     public void BuyUpgrade(Upgrade upgrade) => BuyUpgrade(upgrade.index);
 
     public List<Upgrade> GetBuyableUpgrades(bool checkPower = false)
