@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     [SerializeField] GameObject movementIcon;
 
     private bool mouseIsUp = true;
-    private bool selectMode = false;
+    private bool selectMode = true;
     private bool moveMode = false;
     private Vector3 destination;
 
@@ -37,13 +37,23 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        BuildDefense buildButtonRef = radialMenuRef.GetComponentInChildren<BuildDefense>();
+        if(buildButtonRef == null) { Debug.LogError("Unable to find the Build Defense script within the radial menu's children"); return; }
+        
+        // A turret was just placed so ignore this 'click'
+        if(buildButtonRef.justSpawned == true)
+        {
+            buildButtonRef.justSpawned = false;
+            return;
+        }
+
         // added condition when upgrade screen or radial menu isn't open
         if(selectMode && !radialMenuRef.open && !upgradeScreen.activeInHierarchy)
         {
             movementIcon.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 11.0f);
             if (mouseIsUp && Input.GetMouseButtonDown(0))
             {
-                selectMode = false;
+                selectMode = true;
                 movementIcon.GetComponent<Image>().enabled = false;
                 Vector3 dest = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

@@ -6,6 +6,10 @@ using UnityEngine;
 public class BuildDefense : MonoBehaviour
 {
     public bool spawning;
+    // Used for scripts that need to know if the action of clicking
+    // to place a turret has just occured (ex: base movement script)
+    public bool justSpawned; 
+
     public Transform parentBase;
     [SerializeField] Platform platform;
     public GameObject objectSpawned;
@@ -29,6 +33,7 @@ public class BuildDefense : MonoBehaviour
             if (placement.Item2) //Placed successfully
             {
                 numberOfClicks = 1;
+                justSpawned = true;
                 defense.GetComponent<AI_Base>().enabled = true; //Turn the AI on once placed
                 defenseSprite.color = new Color(1f, 1f, 1f, 1f);
                 spawning = false;
