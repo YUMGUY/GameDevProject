@@ -120,7 +120,7 @@ MonoBehaviour:
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 0.5
+      fireRate: 0.8
       angleOffset: 0
       fireSpread: 0
     animationController: {fileID: 0}
@@ -149,7 +149,7 @@ MonoBehaviour:
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 0.5
+      fireRate: 0.8
       angleOffset: 0
       fireSpread: 0
     animationController: {fileID: 0}
@@ -369,7 +369,7 @@ MonoBehaviour:
       fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 602, y: 251}
+    position: {x: 602, y: 252}
     zindex: 0
     pindex: 0
     inheritSprite: 1
