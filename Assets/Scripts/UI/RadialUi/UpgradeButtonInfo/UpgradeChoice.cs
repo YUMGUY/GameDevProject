@@ -42,7 +42,7 @@ public class UpgradeChoice : MonoBehaviour
         }
         List<Upgrade> newUpgrades = radialUIref.selectedGameObject.GetComponent<TurretUpgrade>().GetBuyableUpgrades();
         // FIXME: code better positioning of choices
-        float ypos = 325f;
+        float ypos = 375f;
         float xpos = 0;
         for (int i = 0; i < newUpgrades.Count; ++i)
         {
@@ -56,11 +56,11 @@ public class UpgradeChoice : MonoBehaviour
             createdButton.transform.localPosition = new Vector3(xpos, ypos, 0);
 
             // FIXME: Figure out how to scale the icons properly
-            createdButton.transform.localScale = new Vector3(1f, 1f, 1f);
+            createdButton.transform.localScale = new Vector3(1.75f, 1.75f, 1.75f);
             UpgradeChoice button_Upgrade = createdButton.GetComponent<UpgradeChoice>();
             button_Upgrade.chosenUpgrade = newUpgrades[i];
             button_Upgrade.radialUIref = radialUIref;
-            ypos -= 200f;
+            ypos -= 275f;
         }
     }
 }

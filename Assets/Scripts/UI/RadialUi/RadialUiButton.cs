@@ -51,7 +51,7 @@ public class RadialUiButton : MonoBehaviour
                 List<Upgrade> upgrades = radialUi.selectedGameObject.GetComponent<TurretUpgrade>().GetBuyableUpgrades();
 
                 // FIXME: code better positioning of choices
-                float ypos = 325f;
+                float ypos = 375f;
                 float xpos = 0;
                 for(int i = 0; i < upgrades.Count; ++i)
                 {
@@ -65,11 +65,11 @@ public class RadialUiButton : MonoBehaviour
                     createdButton.transform.localPosition = new Vector3(xpos, ypos, 0);
 
                     // FIXME: Figure out how to scale the icons properly
-                    createdButton.transform.localScale = new Vector3(1f, 1f, 1f);
+                    createdButton.transform.localScale = new Vector3(1.75f, 1.75f, 1f);
                     UpgradeChoice button_Upgrade = createdButton.GetComponent<UpgradeChoice>();
                     button_Upgrade.chosenUpgrade = upgrades[i];
                     button_Upgrade.radialUIref = radialUi;
-                    ypos -= 200f;
+                    ypos -= 275f;
                 }
             
             }
