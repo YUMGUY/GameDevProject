@@ -14,15 +14,15 @@ public class UpgradeChoice : MonoBehaviour
     {
         if(chosenUpgrade != null)
         {
-            transform.GetComponentInChildren<TextMeshProUGUI>().text = "";
+            //transform.GetComponentInChildren<TextMeshProUGUI>().text = "";
             gameObject.GetComponent<Image>().sprite = chosenUpgrade.icon;
-            transform.GetChild(1).GetChild(0).GetComponentInChildren<TextMeshProUGUI>().text = chosenUpgrade.title;
+            transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = chosenUpgrade.title;
         }
        
     }
     public void ApplyUpgrade()
     {
-        // apply it one time
+       
         print("applied upgrade: " + chosenUpgrade.title);
         radialUIref.selectedGameObject.GetComponent<TurretUpgrade>().BuyUpgrade(chosenUpgrade);
     }

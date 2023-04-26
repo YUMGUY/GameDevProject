@@ -18,7 +18,7 @@ public class Upgrade
         cost = node.cost;
         sprite = node.sprite;
         icon = node.icon;
-        
+
         this.index = index;
     }
 };
@@ -36,7 +36,7 @@ public class TurretUpgrade : MonoBehaviour
     private UpgradeTree tree = null;
 
     public Map map;
-
+    public AlertSystem alertSystem;
     public bool BuyUpgrade(int idx, bool free=false) {
         if (tree == null)
         {
@@ -50,6 +50,8 @@ public class TurretUpgrade : MonoBehaviour
         if (node.zone != null && map.getCurrentZone().name != node.zone.name)
         {
             Debug.Log($"Failed to buy \"{node.title}\", incorrect zone");
+            alertSystem.zoneUpgradeAlert.message = "This upgrade needs " + node.zone.name;
+            alertSystem.SendNotificationAlert(alertSystem.zoneUpgradeAlert);
             return false;
         }
 

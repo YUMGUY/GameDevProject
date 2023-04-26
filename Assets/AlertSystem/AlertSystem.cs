@@ -54,6 +54,8 @@ public class AlertSystem : MonoBehaviour
     /// </summary>
     [SerializeField] private AudioSource bigWarningAlertAudio;
 
+    [Header("TEMP ZONE ALERT FOR UPGRADES")]
+    public AlertScriptable zoneUpgradeAlert;
     [Header("Event")]
     /// <summary>
     /// The event instance that will be used to track when a notification alert

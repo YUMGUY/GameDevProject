@@ -11,6 +11,7 @@ public class BuildDefense : MonoBehaviour
     public GameObject objectSpawned;
     public GameObject defense;
     [SerializeField] Map map;
+    [SerializeField] AlertSystem alertSystem;
 
     private Tower towerBase;
     public SpriteRenderer defenseSprite;
@@ -55,6 +56,7 @@ public class BuildDefense : MonoBehaviour
 
             defenseSprite = defense.GetComponentInChildren<SpriteRenderer>();
             defense.GetComponent<TurretUpgrade>().map = map;
+            defense.GetComponent<TurretUpgrade>().alertSystem = alertSystem;
             numberOfClicks = 0;
         }
     }
