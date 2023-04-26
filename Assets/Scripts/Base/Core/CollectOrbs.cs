@@ -7,7 +7,7 @@ public class CollectOrbs : MonoBehaviour
     /// <summary>
     /// The max distance from which the orbs should move towards the player
     /// </summary>
-    [SerializeField] float attractionRadius;
+    //[SerializeField] float attractionRadius;
 
     /// <summary>
     /// Min speed at which orbs will move towards the base
@@ -47,8 +47,10 @@ public class CollectOrbs : MonoBehaviour
             // Calculate the distance between the orb and the player
             float distance = Vector3.Distance(orb.transform.position, transform.position);
 
+            float attractionRadius = coreData.getPickupRange(coreData.getLevel());
+
             // if within affected distance, pull orb towards player
-            if(distance < attractionRadius)
+            if (distance < attractionRadius)
             {
                 // Evaluate the custom animation curve to get the speed of the orb based on the distance
                 float speed = Mathf.Lerp(minSpeed, maxSpeed, 1 - speedCurve.Evaluate(distance / attractionRadius));

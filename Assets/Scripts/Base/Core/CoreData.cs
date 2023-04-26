@@ -11,6 +11,7 @@ public class CoreData : ScriptableObject
     [SerializeField] private float energyMax = 50.0f;
     [SerializeField] private int maxLevel = 2;
     [SerializeField] List<int> levelUpCost;
+    [SerializeField] List<float> pickupRange;
     [SerializeField] private float energyStored;
 
     [SerializeField] private int startingCoreLevel = 0;
@@ -25,6 +26,11 @@ public class CoreData : ScriptableObject
     public int getLevelUpCost(int level)
     {
         return levelUpCost[level];
+    }
+
+    public float getPickupRange(int level)
+    {
+        return pickupRange[level];
     }
 
     public float getEnergy()
