@@ -36,3 +36,4 @@ Notes:
 
 - Collectible sfx are like generic but also soft
 
+- Normalized to -12 to -15 decibels
