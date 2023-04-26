@@ -146,6 +146,7 @@ MonoBehaviour:
   onCollision:
     m_PersistentCalls:
       m_Calls: []
+  isBomb: 0
 --- !u!114 &3019415976513176237
 MonoBehaviour:
   m_ObjectHideFlags: 0
