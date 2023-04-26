@@ -1,6 +1,5 @@
 using System; // contains [Serializable]
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // for interfacing with the system's subobjects (timer, wave number display, ect)
 
@@ -40,7 +39,8 @@ public class WaveUISystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI timer;
     [SerializeField] TextMeshProUGUI waveCounter;
 
-    [SerializeField] int waveSpawnMult;
+    [SerializeField] Map map;
+    [SerializeField] float waveSpawnMult;
     [SerializeField] Wave[] waveList;
     public GameObject playerLocation; // TO BE DELETED
 
@@ -86,7 +86,8 @@ public class WaveUISystem : MonoBehaviour
         {
             foreach (WaveEnemy currWaveEnemy in currWaveGroup.enemiesInGroup)
             {
-                for (int enemyCounter = 0; enemyCounter < currWaveEnemy.numToSpawn * waveSpawnMult; enemyCounter++)
+                int spawnCount = (int)Math.Round(currWaveEnemy.numToSpawn * Math.Max(0f, waveSpawnMult * map.getCurrentZone().difficultyMultiplier));
+                for (int enemyCounter = 0; enemyCounter < spawnCount; enemyCounter++)
                 {
                     GameObject enemySpawned = Instantiate(currWaveEnemy.enemyToSpawn);
 
@@ -96,6 +97,7 @@ public class WaveUISystem : MonoBehaviour
                                                            currWaveGroup.angleEnd,
                                                            1.0f);
                     enemySpawned.transform.position = playerLocation.transform.position + spawnPos;
+                    enemySpawned.GetComponent<EnemyOrbSystem>().map = map;
 
                     // Edit the sprite renderer's order in layer attribute
                     // so eney sprites do not overlap
@@ -110,9 +112,6 @@ public class WaveUISystem : MonoBehaviour
             }
         }
     }
-
-    int getWaveMult() { return waveSpawnMult; }
-    void setWaveMult(int mult) { waveSpawnMult = mult; }
 
     void getNextWave()
     {

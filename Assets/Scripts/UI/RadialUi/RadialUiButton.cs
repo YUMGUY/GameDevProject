@@ -42,15 +42,15 @@ public class RadialUiButton : MonoBehaviour
                 radialUi.BuildingPhaseOn();
                 // then create amount of buttons available in tower's upgrade tree
                 List<Upgrade> upgrades = radialUi.selectedGameObject.GetComponent<TurretUpgrade>().GetBuyableUpgrades();
-                
+
                 // FIXME: code better positioning of choices
-                float ypos = 225f;
+                float ypos = 325f;
                 float xpos = 0;
                 for(int i = 0; i < upgrades.Count; ++i)
                 {
-                    if(ypos <= -225f)
+                    if (ypos <= -325f)
                     {
-                        ypos = 150f;
+                        ypos = 325f;
                         xpos += 100;
                     }
                     // instantiate upgrade choice buttons prefab
@@ -62,7 +62,7 @@ public class RadialUiButton : MonoBehaviour
                     UpgradeChoice button_Upgrade = createdButton.GetComponent<UpgradeChoice>();
                     button_Upgrade.chosenUpgrade = upgrades[i];
                     button_Upgrade.radialUIref = radialUi;
-                    ypos -= 125f;
+                    ypos -= 200f;
                 }
             
             }

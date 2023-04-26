@@ -18,7 +18,7 @@ public class Upgrade
         cost = node.cost;
         sprite = node.sprite;
         icon = node.icon;
-        
+
         this.index = index;
     }
 };
@@ -44,6 +44,8 @@ public class TurretUpgrade : MonoBehaviour
     // Private instance of upgrade tree
     private UpgradeTree tree = null;
 
+    public Map map;
+    public AlertSystem alertSystem;
     public bool BuyUpgrade(int idx, bool free=false) {
         if (tree == null)
         {
@@ -53,7 +55,14 @@ public class TurretUpgrade : MonoBehaviour
 
         UpgradeNode node = tree[idx];
 
-        tree.lastUpgrade = node;
+        // FIXME: Currently use a hack to see if prefab names are equal
+        if (node.zone != null && map.getCurrentZone().name != node.zone.name)
+        {
+            Debug.Log($"Failed to buy \"{node.title}\", incorrect zone");
+            alertSystem.zoneUpgradeAlert.message = "This upgrade needs " + node.zone.name;
+            alertSystem.SendNotificationAlert(alertSystem.zoneUpgradeAlert);
+            return false;
+        }
 
         Debug.Log($"Buying: \"{node.title}\"");
 
@@ -64,16 +73,23 @@ public class TurretUpgrade : MonoBehaviour
             Debug.LogError("No status system found on tower game object.");
             return false;
         }
-
-        // Set node as owned
-        node.bought = true;
-
         // Remove power
         if (!free && coreData.getEnergy() > node.cost)
         {
             coreData.removeEnergy((float)node.cost);
             print(coreData.getEnergy() + "left");
         }
+        // not enough power
+        else
+        {
+            print("not enough power");
+            return false;
+        }
+
+        tree.lastUpgrade = node;
+
+        // Set node as owned
+        node.bought = true;
 
         // Resolve effective sprite
         if (tree.GetEffectiveSprite(node) is Sprite effectiveSprite)
@@ -134,7 +150,6 @@ public class TurretUpgrade : MonoBehaviour
 
             projectileSystem.ResetSystem();
         }
-
 
         return true;
     }

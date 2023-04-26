@@ -297,7 +297,7 @@ public class ProjectileSystem : MonoBehaviour, BaseAIComponent
         float xPos = Mathf.Cos(randomAngle);
         float yPos = Mathf.Sin(randomAngle);
 
-        Debug.Log(new Vector2(xPos, yPos));
+        //Debug.Log(new Vector2(xPos, yPos));
         return new Vector3(xPos, yPos, 0);
     }
 }

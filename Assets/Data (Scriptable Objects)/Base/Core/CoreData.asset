@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d6fa4bb8897234db8d37f6c765972c, type: 3}
   m_Name: CoreData
   m_EditorClassIdentifier: 
-  startingEnergyStored: 1
-  energyMax: 50
+  startingEnergyStored: 10
+  energyMax: 300
   maxLevel: 2
-  energyStored: 0
+  energyStored: 10
   startingCoreLevel: 0

@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8777c8f95ee717c4083ec0dff353c3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  map: {fileID: 0}
   orb: {fileID: 8176211403254085244, guid: 65fac8a9fa4de3a4281b71db9f24bab6, type: 3}
   animController: {fileID: 0}
 --- !u!114 &9074310293624954182
@@ -164,8 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6410c959596ba184e86713a51117b3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 1
-  effectiveSpeed: 1
+  baseSpeed: 1.5
+  effectiveSpeed: 1.5
   maxSpeed: 3
   isDirectMovement: 0
 --- !u!114 &4445653251142912815
@@ -180,7 +181,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd03adf62481a84a830ab4dc0cf4624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectiles: []
+  projectiles:
+  - projectile: {fileID: 4967661330752684158, guid: cb9447f91826f08478f936745f3ee8e2, type: 3}
+    projectileProperties:
+      speed: 1
+      scaleModifier: 2
+      lifeTime: 1
+      damage: 1
+      dieOnCollision: 0
+      homing: 0
+    projectileSpawnDistance: 0
+    fireRate: 0.5
+    angleOffset: 0
+    fireSpread: 0
 --- !u!114 &481477862952636339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4548c2ca39c475245be9575695a0442d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 50
   effectiveHealth: 0
   OnDamageTaken:
     m_PersistentCalls:
