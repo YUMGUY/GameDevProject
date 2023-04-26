@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CoreData
   m_EditorClassIdentifier: 
   startingEnergyStored: 15
-  energyMax: 500
+  energyMax: 200
   maxLevel: 2
-  energyStored: 0
+  energyStored: 32
   startingCoreLevel: 0

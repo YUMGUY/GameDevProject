@@ -184,7 +184,7 @@ MonoBehaviour:
   - projectile: {fileID: 4967661330752684158, guid: cb9447f91826f08478f936745f3ee8e2, type: 3}
     projectileProperties:
       speed: 1
-      scaleModifier: 1
+      scaleModifier: 2
       lifeTime: 1
       damage: 1
       dieOnCollision: 0
