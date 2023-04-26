@@ -6,7 +6,7 @@ public class EnemyReaction : MonoBehaviour
 {
 
     // TEMPORARY SOLUTION TO ONDMG BUG //
-
+    [Header("Flashes")]
     [SerializeField] private Material flashMaterial;
 
     [Tooltip("Duration of the flash.")]
@@ -20,6 +20,14 @@ public class EnemyReaction : MonoBehaviour
 
     // The currently running coroutine.
     private Coroutine flashRoutine;
+
+    [Header("SFX")]
+    // audio source component that plays the sfx
+    [SerializeField] private AudioSource audioSource;
+    // sfx to play when enemy takes damage
+    [SerializeField] private AudioClip takeDamageSFX;
+    // sfx to play when enemy dies
+    [SerializeField] private AudioClip dieSFX;
 
     void Start()
     {
@@ -58,5 +66,21 @@ public class EnemyReaction : MonoBehaviour
 
         // Set the routine to null, signaling that it's finished.
         flashRoutine = null;
+    }
+
+    public void playTakeDamageSFX()
+    {
+        if (takeDamageSFX != null)
+        {
+            audioSource?.PlayOneShot(takeDamageSFX);
+        }
+    }
+
+    public void playDieSFX()
+    {
+        if (dieSFX != null)
+        {
+            audioSource?.PlayOneShot(dieSFX);
+        }
     }
 }

@@ -17,6 +17,10 @@ public class BuildDefense : MonoBehaviour
     public SpriteRenderer defenseSprite;
     [SerializeField] private int numberOfClicks = 0;
 
+    [Header("SFX")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip moveTurretSFX;
+
     void Update()
     {
         if(Input.GetMouseButton(0) && spawning == true)
@@ -28,6 +32,11 @@ public class BuildDefense : MonoBehaviour
                 defense.GetComponent<AI_Base>().enabled = true; //Turn the AI on once placed
                 defenseSprite.color = new Color(1f, 1f, 1f, 1f);
                 spawning = false;
+                // play sound effect
+                if (moveTurretSFX != null)
+                {
+                    audioSource?.PlayOneShot(moveTurretSFX);
+                }
             }
         }
     }

@@ -32,6 +32,15 @@ public class TurretUpgrade : MonoBehaviour
     [SerializeField]
     private CoreData coreData;
 
+    // component that plays the sound effects
+    [SerializeField]
+    private AudioSource audioSource;
+
+    // sound effect that will be played when player buys an upgrade
+    // (apparently also plays upon building a turret)
+    [SerializeField]
+    private AudioClip buyUpgradeSFX;
+
     // Private instance of upgrade tree
     private UpgradeTree tree = null;
 
@@ -91,6 +100,12 @@ public class TurretUpgrade : MonoBehaviour
         if (tree.GetEffectiveAnimator(node) is RuntimeAnimatorController controller)
         {
             gameObject.GetComponent<Animator>().runtimeAnimatorController = controller;
+        }
+
+        // Play the upgrade sound effect
+        if(buyUpgradeSFX!= null)
+        {
+            audioSource?.PlayOneShot(buyUpgradeSFX);
         }
 
         foreach (Modifier mod in node.modifiers)
