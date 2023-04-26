@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Image gameOverScreen;
     public Sprite win;
     public Sprite lose;
+    public TextMeshProUGUI powerNumberText;
     public bool conditionMet;
     public bool coroutineStarted;
     public bool wonGame;
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(EndGame());
             coroutineStarted = true;
         }
+        powerNumberText.text = coreRef.getEnergy().ToString("F2") +"/" + coreRef.getMaxEnergy().ToString();
        // print(Time.timeScale);
     }
 

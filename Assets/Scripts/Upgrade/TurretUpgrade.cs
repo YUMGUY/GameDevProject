@@ -64,18 +64,23 @@ public class TurretUpgrade : MonoBehaviour
             Debug.LogError("No status system found on tower game object.");
             return false;
         }
-
-        tree.lastUpgrade = node;
-
-        // Set node as owned
-        node.bought = true;
-
         // Remove power
         if (!free && coreData.getEnergy() > node.cost)
         {
             coreData.removeEnergy((float)node.cost);
             print(coreData.getEnergy() + "left");
         }
+        // not enough power
+        else
+        {
+            print("not enough power");
+            return false;
+        }
+
+        tree.lastUpgrade = node;
+
+        // Set node as owned
+        node.bought = true;
 
         // Resolve effective sprite
         if (tree.GetEffectiveSprite(node) is Sprite effectiveSprite)

@@ -16,4 +16,4 @@ MonoBehaviour:
   alertSound: {fileID: 8300000, guid: 9b98e38fcad10a94ca6fa9b910fad05d, type: 3}
   duration: 4
   textColor: {r: 1, g: 0.7877358, b: 0.7877358, a: 1}
-  message: Entering Zone 2
+  message: 'Entering Zone 2 : Difficulty Multipler: 1.5 :Power Multiplier: 1.5'

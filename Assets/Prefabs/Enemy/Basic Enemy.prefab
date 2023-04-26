@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6410c959596ba184e86713a51117b3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 1
-  effectiveSpeed: 1
+  baseSpeed: 2.2
+  effectiveSpeed: 2.2
   maxSpeed: 5
   isDirectMovement: 0
 --- !u!114 &4445653251142912815
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4548c2ca39c475245be9575695a0442d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 7
+  maxHealth: 10
   effectiveHealth: 0
   OnDamageTaken:
     m_PersistentCalls:

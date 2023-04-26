@@ -33,7 +33,7 @@ MonoBehaviour:
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 0.5
+      fireRate: 0.8
       angleOffset: 0
       fireSpread: 0
     animationController: {fileID: 0}
@@ -53,9 +53,9 @@ MonoBehaviour:
     zone: {fileID: 0}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: 3fd2cd63a44cefd4caed90840fa088bf, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: b873ca8cd2a275740a207ed24579ce7f, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
         lifeTime: 5
         damage: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
       fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 352, y: 57}
+    position: {x: 344, y: 113}
     zindex: 1
     pindex: 0
     inheritSprite: 1
@@ -75,28 +75,28 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 0}
     icon: {fileID: 21300000, guid: 18f7b38895dc9b746819d93cafbdd5f1, type: 3}
-    cost: 50
+    cost: 30
     prerequisites: 01000000
     exclusion: 
     bought: 0
     zone: {fileID: 0}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: 3fd2cd63a44cefd4caed90840fa088bf, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: b873ca8cd2a275740a207ed24579ce7f, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
-        lifeTime: 5
+        lifeTime: 10
         damage: 0
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 0.3
+      fireRate: 0.25
       angleOffset: 0
       fireSpread: 10
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 600, y: 56}
+    position: {x: 600, y: 50}
     zindex: 0
     pindex: 0
     inheritSprite: 1
@@ -111,7 +111,7 @@ MonoBehaviour:
     zone: {fileID: 0}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: 0df04300c64b5524082e48e911fa2e84, type: 3}
       projectileProperties:
         speed: 5
         scaleModifier: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 343, y: 354}
+    position: {x: 342, y: 353}
     zindex: 1
     pindex: 0
     inheritSprite: 1
@@ -133,16 +133,16 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 0}
     icon: {fileID: 21300000, guid: 97937b6242765cd469ba1a988fe3c03a, type: 3}
-    cost: 30
+    cost: 25
     prerequisites: 03000000
     exclusion: 
     bought: 0
     zone: {fileID: 2262138801241056872, guid: 9c859c7d3b6e5a14e8632652db7f5cd8, type: 3}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: 38b36144b41b72e428f7b4f971aa2ee0, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: fb946d790c36b9d49b8e57551dde7a07, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
         lifeTime: 5
         damage: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 605, y: 357}
+    position: {x: 606, y: 357}
     zindex: 2
     pindex: 0
     inheritSprite: 1
@@ -162,7 +162,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: d0e182cbcc35418418be9525add619fd, type: 3}
     icon: {fileID: 21300000, guid: d0e182cbcc35418418be9525add619fd, type: 3}
-    cost: 100
+    cost: 45
     prerequisites: 0d000000
     exclusion: 
     bought: 0
@@ -171,19 +171,19 @@ MonoBehaviour:
     projectiles:
     - projectile: {fileID: 4967661330752684158, guid: fe8617836fdf6f2499bbb88e34f0c176, type: 3}
       projectileProperties:
-        speed: 2
+        speed: 6
         scaleModifier: 1
-        lifeTime: 6
+        lifeTime: 10
         damage: 0
         dieOnCollision: 1
         homing: 1
       projectileSpawnDistance: 0
-      fireRate: 1
+      fireRate: 0.5
       angleOffset: 0
       fireSpread: 0
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 860, y: 462}
+    position: {x: 860, y: 461}
     zindex: 0
     pindex: 0
     inheritSprite: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: 31ec9181980cde34bb8c303e775f3354, type: 3}
     icon: {fileID: 21300000, guid: 31ec9181980cde34bb8c303e775f3354, type: 3}
-    cost: 100
+    cost: 45
     prerequisites: 02000000
     exclusion: 
     bought: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 1079035540, guid: e63c11562e63b7e4897b491b0a2baf41, type: 3}
     icon: {fileID: 1079035540, guid: e63c11562e63b7e4897b491b0a2baf41, type: 3}
-    cost: 100
+    cost: 45
     prerequisites: 04000000
     exclusion: 
     bought: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
       fireSpread: 0
     animationController: {fileID: 9100000, guid: 08001af16f266094190df22d09c634f2, type: 2}
     modifiers: []
-    position: {x: 857, y: 356}
+    position: {x: 857, y: 352}
     zindex: 0
     pindex: 0
     inheritSprite: 0
@@ -273,9 +273,9 @@ MonoBehaviour:
     zone: {fileID: 0}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: 0df04300c64b5524082e48e911fa2e84, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
         lifeTime: 5
         damage: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
       fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 601, y: 165}
+    position: {x: 601, y: 161}
     zindex: 0
     pindex: 0
     inheritSprite: 1
@@ -295,52 +295,52 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
     icon: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
-    cost: 100
+    cost: 45
     prerequisites: 09000000
     exclusion: 
     bought: 0
     zone: {fileID: 0}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: f1827c3af9178bf48b0dbcfab9608c17, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
-        lifeTime: 5
+        lifeTime: 6
         damage: 0
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 1
+      fireRate: 0.6
       angleOffset: 0
       fireSpread: 5
-    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: f1827c3af9178bf48b0dbcfab9608c17, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
-        lifeTime: 5
+        lifeTime: 6
         damage: 0
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 1
+      fireRate: 0.6
       angleOffset: 45
       fireSpread: 5
-    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: f1827c3af9178bf48b0dbcfab9608c17, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
-        lifeTime: 5
+        lifeTime: 6
         damage: 0
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 1
+      fireRate: 0.6
       angleOffset: -45
       fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 856, y: 159}
+    position: {x: 856, y: 156}
     zindex: 0
     pindex: 0
     inheritSprite: 0
@@ -355,9 +355,9 @@ MonoBehaviour:
     zone: {fileID: 0}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: 0df04300c64b5524082e48e911fa2e84, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
         lifeTime: 5
         damage: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
       fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 603, y: 254}
+    position: {x: 602, y: 251}
     zindex: 0
     pindex: 0
     inheritSprite: 1
@@ -377,52 +377,52 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
     icon: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
-    cost: 100
+    cost: 45
     prerequisites: 0b000000
     exclusion: 
     bought: 0
     zone: {fileID: 0}
     inheritProjectile: 0
     projectiles:
-    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: f1827c3af9178bf48b0dbcfab9608c17, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
-        lifeTime: 5
+        lifeTime: 6
         damage: 0
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 1
+      fireRate: 0.6
       angleOffset: 0
       fireSpread: 5
-    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: f1827c3af9178bf48b0dbcfab9608c17, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
-        lifeTime: 5
+        lifeTime: 6
         damage: 0
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 1
+      fireRate: 0.6
       angleOffset: 45
       fireSpread: 5
-    - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
+    - projectile: {fileID: 4967661330752684158, guid: f1827c3af9178bf48b0dbcfab9608c17, type: 3}
       projectileProperties:
-        speed: 5
+        speed: 6
         scaleModifier: 1
-        lifeTime: 5
+        lifeTime: 6
         damage: 0
         dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
-      fireRate: 1
+      fireRate: 0.6
       angleOffset: -45
       fireSpread: 5
     animationController: {fileID: 0}
     modifiers: []
-    position: {x: 857, y: 258}
+    position: {x: 857, y: 252}
     zindex: 0
     pindex: 0
     inheritSprite: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 0}
     icon: {fileID: 0}
-    cost: 25
+    cost: 10
     prerequisites: 03000000
     exclusion: 
     bought: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
     projectiles:
     - projectile: {fileID: 4967661330752684158, guid: fe88a84df021de4448ef2b6a17e622e0, type: 3}
       projectileProperties:
-        speed: 3
+        speed: 5
         scaleModifier: 2
         lifeTime: 5
         damage: 0

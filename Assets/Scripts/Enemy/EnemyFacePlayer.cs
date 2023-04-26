@@ -28,11 +28,11 @@ public class EnemyFacePlayer : MonoBehaviour
         {
             if (playerRef.transform.position.x < transform.position.x)
             {
-                currScale.x = -1;
+                currScale.x = -1 * (Mathf.Abs(currScale.x));
             }
             else
             {
-                currScale.x = 1;
+                currScale.x = Mathf.Abs(currScale.x);
             }
         }
     }
