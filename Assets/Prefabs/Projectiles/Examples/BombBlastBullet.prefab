@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -2210693612578009972}
   - component: {fileID: 5066734864370870640}
   - component: {fileID: -7699904832366036091}
-  - component: {fileID: 3305242325728982346}
+  - component: {fileID: 615800410776696067}
   m_Layer: 8
   m_Name: BombBlastBullet
   m_TagString: Bullet
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 4967661330752684158, guid: d700cb3ef601b844a931ed9afc072458, type: 3}
---- !u!82 &3305242325728982346
+--- !u!82 &615800410776696067
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,11 +230,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1b9420fac08441b448f90b72ae23c716, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
