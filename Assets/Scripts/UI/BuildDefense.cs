@@ -23,7 +23,10 @@ public class BuildDefense : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButton(0) && spawning == true)
+        if (!spawning)
+            return;
+
+        if (Input.GetMouseButton(0))
         {
             Tuple<Vector3, bool> placement = towerBase.place(defense);
             if (placement.Item2) //Placed successfully
@@ -38,6 +41,10 @@ public class BuildDefense : MonoBehaviour
                     audioSource?.PlayOneShot(moveTurretSFX);
                 }
             }
+        } else if (Input.GetMouseButton(1))
+        {
+            spawning = false;
+            Destroy(defense);
         }
     }
 
@@ -55,6 +62,14 @@ public class BuildDefense : MonoBehaviour
         if (!spawning)
         {
             defense = Instantiate(objectSpawned);
+
+            if (!defense.activeInHierarchy)
+            {
+                // Failed to buy
+                spawning = false;
+                Destroy(defense);
+                return;
+            }
 
             towerBase = defense.AddComponent<Tower>();
             towerBase.parent = parentBase.gameObject;
