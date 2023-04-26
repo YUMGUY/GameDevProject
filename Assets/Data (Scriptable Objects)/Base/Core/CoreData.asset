@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CoreData
   m_EditorClassIdentifier: 
   startingEnergyStored: 10
-  energyMax: 300
+  energyMax: 500
   maxLevel: 2
   levelUpCost: 0100000032000000
   pickupRange:
