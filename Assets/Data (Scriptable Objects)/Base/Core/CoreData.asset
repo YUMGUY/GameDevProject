@@ -15,9 +15,10 @@ MonoBehaviour:
   startingEnergyStored: 10
   energyMax: 500
   maxLevel: 2
-  levelUpCost: 0100000032000000
+  levelUpCost: 1900000032000000
   pickupRange:
   - 12
-  - 500
+  - 50
+  - 100
   energyStored: 10
   startingCoreLevel: 0

@@ -17,7 +17,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: 0c9dd4099e84dd649907b34f92242208, type: 3}
     icon: {fileID: 0}
-    cost: 3
+    cost: 5
     prerequisites: 
     exclusion: 
     bought: 1
@@ -75,7 +75,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 0}
     icon: {fileID: 21300000, guid: 18f7b38895dc9b746819d93cafbdd5f1, type: 3}
-    cost: 35
+    cost: 30
     prerequisites: 01000000
     exclusion: 
     bought: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: 31ec9181980cde34bb8c303e775f3354, type: 3}
     icon: {fileID: 21300000, guid: 31ec9181980cde34bb8c303e775f3354, type: 3}
-    cost: 60
+    cost: 50
     prerequisites: 02000000
     exclusion: 
     bought: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
     icon: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
-    cost: 60
+    cost: 50
     prerequisites: 09000000
     exclusion: 
     bought: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
         scaleModifier: 1
         lifeTime: 7
         damage: 0
-        dieOnCollision: 0
+        dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.5
@@ -320,7 +320,7 @@ MonoBehaviour:
         scaleModifier: 1
         lifeTime: 7
         damage: 0
-        dieOnCollision: 0
+        dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.5
@@ -332,7 +332,7 @@ MonoBehaviour:
         scaleModifier: 1
         lifeTime: 7
         damage: 0
-        dieOnCollision: 0
+        dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.5
@@ -377,7 +377,7 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
     icon: {fileID: 21300000, guid: a1ca0761c135f8f40bae653738fd20dc, type: 3}
-    cost: 60
+    cost: 50
     prerequisites: 0b000000
     exclusion: 
     bought: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
         scaleModifier: 1
         lifeTime: 7
         damage: 0
-        dieOnCollision: 0
+        dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.5
@@ -402,7 +402,7 @@ MonoBehaviour:
         scaleModifier: 1
         lifeTime: 7
         damage: 0
-        dieOnCollision: 0
+        dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.5
@@ -414,7 +414,7 @@ MonoBehaviour:
         scaleModifier: 1
         lifeTime: 7
         damage: 0
-        dieOnCollision: 0
+        dieOnCollision: 1
         homing: 0
       projectileSpawnDistance: 0
       fireRate: 0.5
